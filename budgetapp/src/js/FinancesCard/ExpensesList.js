@@ -26,7 +26,7 @@ const ExpensesList = () => {
 
                 <div className="expenses-list__list">
                 {expensesData?.map(({ id, category, subcategories}) => (
-                   <Category key={id} title={category} subCategories={subcategories}/>
+                   <Category key={id} title={category} subCategories={subcategories} catID={id}/>
                 ))}
                 </div>
             </div>

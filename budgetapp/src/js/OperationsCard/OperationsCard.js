@@ -1,24 +1,26 @@
 import TimePeriod from "../TimePeriod";
-// import DataContext from "./DataContext";
-// import { useContext } from "react";
+import DataContext from '../DataContext/DataContext';
+import { useContext } from "react";
 
 const OperationsCard = () => {
 
-    // const {operationsData, expensesData} = useContext(DataContext);
+    const {operationsData, expensesData} = useContext(DataContext);
 
     
   
 
     // const categoryName = expensesData.find(category=> category.id === categoryID).name;
 
-    // const handleCategory = (catID, data) => {
-    //    return data.find(record=> record.id === catID).category;
-    // }
+    const handleCategory = (catID, data) => {
+       return data.find(record=> record.id === catID).category;
+    }
 
-    // const handleSubcategory = (subcatID, catID, data) => {
-    //     const category = data.find(record => record.id === catID).category;
-    //     return category.subcategories.find(r => r.id === subcatID).subcategory;
-    // }
+    const handleSubcategory = (subcatID, catID, data) => {
+        const categoryObject = data.find(record=> record.id === catID);
+        return categoryObject.subcategories.find(r => r.id === subcatID).subcategory;
+    }
+
+   
 
     return (
         
@@ -32,15 +34,17 @@ const OperationsCard = () => {
 
                 <div className="expenses-list__list">
                 {
-                    // operationsData?.map(({ id, categoryID, subcategoryID, amount, date}) => (
-                    // <div key = {id} className="expenses-list__subcategory">
-                    //     <div className="expenses-list__subcategory--name">{date}</div>
-                    //     <div className="expenses-list__subcategory--name">{handleCategory(categoryID, expensesData)}</div>
-                    //     {/* <div className="expenses-list__subcategory--name">{handleCategory(subcategoryID, categoryID, expensesData)}</div> */}
-                    //     <div className="expenses-list__subcategory--sum"><span>-{amount}</span> zł 
-                    //     </div>
-                    // </div>
-                    // ))
+                    operationsData?.map(({ id, categoryID, subcategoryID, amount, date}) => (
+                    <div key = {id} className="expenses-list__subcategory">
+                        <div className="expenses-list__subcategory--name">{date}</div>
+                        <div>
+                            <div className="expenses-list__category--name">{handleCategory(categoryID, expensesData)}</div>
+                            <div className="expenses-list__subcategory--name">{handleSubcategory(subcategoryID, categoryID, expensesData)}</div>
+                        </div>
+                        <div className="expenses-list__subcategory--sum"><span>-{amount}</span> zł 
+                        </div>
+                    </div>
+                    ))
                 }
                 </div>
             </div>

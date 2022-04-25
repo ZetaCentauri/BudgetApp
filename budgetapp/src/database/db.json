@@ -117,6 +117,36 @@
         "month" : "february",
         "year" : 2022,
         "amount" : 20
+      },
+      {
+        "id" : 503,
+        "categoryID" : 1,
+        "subcategoryID" : 101,
+        "payer": 201,
+        "date": "01.02.2022",
+        "month" : "february",
+        "year" : 2022,
+        "amount" : 45
+      }, 
+      {
+        "id" : 504,
+        "categoryID" : 2,
+        "subcategoryID" : 201,
+        "payer": 202,
+        "date": "05.02.2022",
+        "month" : "february",
+        "year" : 2022,
+        "amount" : 5
+      }, 
+      {
+        "id" : 505,
+        "categoryID" : 1,
+        "subcategoryID" : 101,
+        "payer": 201,
+        "date": "01.02.2022",
+        "month" : "february",
+        "year" : 2022,
+        "amount" : 450
       }
     ],
     "users" : []
