@@ -2,7 +2,7 @@ import SubCategory from "./Subcategory";
 import { useState } from "react";
 import Job from "./Job";
 
-const FamilyMember = ({title, subCategories, income}) => {
+const FamilyMember = ({title, jobs, income}) => {
 
 
     return (
@@ -12,9 +12,9 @@ const FamilyMember = ({title, subCategories, income}) => {
                 <div className="income-list__category--sum"><span>{income.reduce((sum, item)=>sum+item)}</span> zł</div>
         </div>
         {
-            subCategories.map((subCat, i)=>{
+            jobs.map((job, i)=>{
                 return (
-                <Job subTitle={subCat} amount={income[i]} />
+                <Job subTitle={job} amount={income[i]} />
                 )
             })
         }

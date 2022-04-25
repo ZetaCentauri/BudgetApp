@@ -17,7 +17,7 @@ const IncomeList = () => {
              
              <div className="income-list__list">
              {incomeData?.map(({ id, name, jobs, income }) => (
-                 <FamilyMember key={id} title={name} subCategories={jobs} income={income}/>
+                 <FamilyMember key={id} title={name} jobs={jobs} income={income}/>
                 ))}
             </div>
             
