@@ -1,5 +1,6 @@
 import SubCategory from "./Subcategory";
 import { useState } from "react";
+import Job from "./Job";
 
 const FamilyMember = ({title, subCategories, income}) => {
 
@@ -13,7 +14,7 @@ const FamilyMember = ({title, subCategories, income}) => {
         {
             subCategories.map((subCat, i)=>{
                 return (
-                <SubCategory subTitle={subCat} amount={income[i]} />
+                <Job subTitle={subCat} amount={income[i]} />
                 )
             })
         }
