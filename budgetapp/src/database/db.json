@@ -1,0 +1,123 @@
+{
+    "membersIncome": [
+      {
+        "id" : 201,
+        "name": "Pawel",
+        "jobs":["Praca1", "Praca2", "Praca3"],
+        "income" : [3900, 5000, 600],
+        "year": 2022,
+        "month": "may",
+        "incomes" : [
+          {
+            "job": "Praca1",
+            "amount": 3900
+          },
+          {
+            "job": "Praca2",
+            "amount": 5000
+          },
+          {
+            "job": "Praca3",
+            "amount": 600
+          }
+        ]
+        },
+        {
+          "id" : 202,
+          "name": "Marta",
+          "jobs":["Praca1", "Praca2"],
+          "income" : [3900, 600],
+          "year": 2022,
+          "month": "may",
+          "incomes" : [
+            {
+              "job": "Praca1",
+              "amount": 3900
+            },
+            {
+              "job": "Praca2",
+              "amount": 600
+            }
+          ]
+          }
+    ],
+  
+    "categories": [
+      {
+      "id":1,
+      "date": "2022 01",
+      "category" : "Jedzenie",
+      "subcategories" : [
+        { 
+          "id" : 101,
+          "subcategory" : "w domu",
+          "expenses" : 520
+        }, 
+        { 
+          "id" : 102,
+          "subcategory" : "w pracy",
+          "expenses" : 130
+        },
+        { 
+          "id" : 103,
+          "subcategory" : "na mieście",
+          "expenses" : 100
+        }
+      ]
+      },
+      {
+        "id":2,
+        "date": "2022 01",
+        "category" : "Rozrywka",
+        "subcategories" : [
+          { 
+            "id" : 201,
+            "subcategory" : "kino",
+            "expenses" : 120
+          }, 
+          { 
+            "id" : 202,
+            "subcategory" : "ksiąki",
+            "expenses" : 100
+          },
+          { 
+            "id" : 203,
+            "subcategory" : "teatr",
+            "expenses" : 200
+          }
+        ]
+      }
+    ],
+  
+    "subcategories" : [
+      {
+        "name" : "w domu",
+        "category" : "jedzenie",
+        "amount": 520
+      }
+    ],
+  
+    "operations" : [
+      {
+        "id" : 501,
+        "categoryID" : 1,
+        "subcategoryID" : 101,
+        "payer": 201,
+        "date": "01.02.2022",
+        "month" : "february",
+        "year" : 2022,
+        "amount" : 45
+      }, 
+      {
+        "id" : 502,
+        "categoryID" : 1,
+        "subcategoryID" : 102,
+        "payer": 202,
+        "date": "21.02.2022",
+        "month" : "february",
+        "year" : 2022,
+        "amount" : 20
+      }
+    ],
+    "users" : []
+  }

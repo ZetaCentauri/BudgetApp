@@ -5,7 +5,7 @@ import Summary from '../Summary';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 
-// import {DataProvider} from '../DataContext';
+import {DataProvider} from '../DataContext/DataContext';
 // import Modal from '../Modal';
 
 
@@ -25,12 +25,12 @@ const Layout = ({ children }) => {
           </div>
         </header>
         <main className="main">
-          {/* <DataProvider> */}
+          <DataProvider>
             <Navigation/>
             {children} 
             <Summary/>
             {/* <Modal /> */}
-          {/* </DataProvider> */}
+          </DataProvider>
         </main>
  
       </div>
