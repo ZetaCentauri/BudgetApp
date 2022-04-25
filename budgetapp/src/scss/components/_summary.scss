@@ -1,0 +1,43 @@
+.summary {
+    display: none;
+  
+    @include desktop {
+      height: 100%;
+      width: 300px;
+      background-color: rgb(225, 234, 248);
+      border-radius: 0 20px 20px 0;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      h2 {
+        text-align: center;
+        text-decoration: underline;
+        margin-bottom: 2rem;
+      }
+    }
+    }
+  
+  .summary__container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    height: 90%;
+    width: 90%;
+    padding: 1rem;
+  }
+  
+  .summary__item {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+  
+  .summary__total {
+    border-top: 1px solid $color-theme;
+    padding-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  
+  

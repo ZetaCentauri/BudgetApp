@@ -1,5 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Lato:wght@100;300;400;700&display=swap');
+@import 'scss/abstracts/variables';
+@import 'scss/global/mixins';
+@import 'scss/global/global';
+@import 'scss/global/buttons';
+
+@import 'scss/components/layout';
+@import 'scss/components/modal';
+@import 'scss/components/navigation';
+@import 'scss/components/card';
+@import 'scss/components/summary';
+@import 'scss/global/reset';
+@import 'scss/components/time_period';
+// @import 'scss/components/expenses_list';
+
+
+
+
 .App {
-  text-align: center;
+  height: 100vh;
+  min-width: 100vw;
+  background-color: #7e9bb3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+
+.header {
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+  color: #ffffff;
+  @include tablet {padding: 0 50px;
+    justify-content: space-between;}
+  .logo {
+    align-self: flex-start;
+    color: #ffffff;
+    font-size: 2rem;
+  
+    i {
+      color: #161212;
+      font-size: 2rem;
+    }
+  
+    span {
+      font-family: $font-secondary;
+      padding: 5px;
+    }
+  }
+
+    .user {
+      display: none;
+    @include desktop {
+    display: flex;
+    align-items: center;
+
+    &__last_name, &__first__name {
+      padding: 5px;
+    }
+
+    &__avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      margin: 5px;
+    }
+  }
+  }
+
+}
+
+
 
 

@@ -1,0 +1,52 @@
+.expenses-list__card, .income-list__card {
+    width: 100%;
+    background-color: #ffffff;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.expenses-list__header, .income-list__header{
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-theme;
+    color: #ffffff;
+    padding: 5px 20px;
+    border-radius: 5px 5px 0 0;
+    font-weight: bold;
+}
+
+.expenses-list__category, .expenses-list__subcategory, 
+.income-list__category, .income-list__subcategory {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: $color-theme;
+    border-bottom: 1px solid $color-backgroung;
+    font-weight: bold;
+}
+
+.expenses-list__category, .income-list__category {
+    border-top: 4px solid $color-theme;
+}
+
+.expenses-list__subcategory {
+   padding-left: 30px;
+    font-weight: 400;
+    padding-right: 0;
+
+}
+
+.expenses-list__list, .income-list__list {
+    max-height: 55vh;
+    overflow-y: scroll ;
+}
+
+// .expenses-list__category--sum span {
+    
+// }
+
+// .expenses-list__category--name {
+
+// }

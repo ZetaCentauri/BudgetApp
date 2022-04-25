@@ -1,0 +1,17 @@
+.card {
+
+    height: 100%;
+    flex-grow: 1;
+    background-color: rgb(225, 234, 248);
+    padding: 20px;
+  
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+
+    @include desktop {
+      margin: 0 20px;
+     
+    }
+  }

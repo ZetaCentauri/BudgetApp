@@ -1,0 +1,14 @@
+.main {
+    @include desktop {
+      width: calc(100vw - 100px); 
+    }
+      
+      height: calc(100vh - 80px); 
+      background-color: #FFFFFF;
+      border-radius: 20px;
+    
+    
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
