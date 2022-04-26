@@ -34,14 +34,17 @@ export function DataProvider({children}) {
     .reduce((total, income)=>total+income, 0);
 
       
-      // function sumUpSubcategoryExpenses sums all operations in the corresponding Subcategory
+      // function sumUpSubcategoryExpenses sums all operations in the corresponding Category or Subcategory
   const sumUpSubcatExpenses = (catID, subCatID) => {
     if (operationsData.length > 0) {
-      const filtered = operationsData.filter(operation => (operation.categoryID === catID && operation.subcategoryID === subCatID));
-      const subcatExspensesArray = filtered.map(el => el.amount);
+      const filtered = subCatID ? 
+          operationsData.filter(operation => (operation.categoryID === catID && operation.subcategoryID === subCatID))
+        : operationsData.filter(operation => (operation.categoryID === catID));
 
-      return (subcatExspensesArray.length > 0) ? 
-      (subcatExspensesArray.reduce((sum, expense) => sum + expense)) :  0; 
+      const exspensesArray = filtered.map(el => el.amount);
+
+      return (exspensesArray.length > 0) ? 
+      (exspensesArray.reduce((sum, expense) => sum + expense)) :  0; 
 
       } else {
       return 0;
