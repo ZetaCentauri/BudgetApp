@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 
 const SubCategory = ({subTitle, subcatID, catID}) => {
 
-    console.log(subcatID);
+    
     const [amount, setAmount] = useState(0);
 
     const {sumUpSubcatExpenses} = useContext(DataContext);

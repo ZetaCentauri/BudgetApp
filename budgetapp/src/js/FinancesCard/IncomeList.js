@@ -5,8 +5,7 @@ import FamilyMember from "./FamilyMember";
 const IncomeList = () => {
     // const [data, setData] = useState([])
     const {incomeData} = useContext(DataContext);
-    
-    console.log(incomeData);
+
 
     return (
         <>
