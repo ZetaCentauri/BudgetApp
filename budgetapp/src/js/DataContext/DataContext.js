@@ -7,6 +7,8 @@ export function DataProvider({children}) {
   const [incomeData, setIncomeData] = useState([])
   const [expensesData, setExpensesData] = useState([]);
   const [operationsData, setOperationsData] = useState([]);
+  const [totalIncome, setTotalIncome] = useState(0);
+  const [totalExpenses, setTotalExpenses] =useState(0);
 
   useEffect(() => {
         Promise.all ([
@@ -19,60 +21,73 @@ export function DataProvider({children}) {
                 setIncomeData(data1);
                 setExpensesData(data2);
                 setOperationsData(data3);
-              
               });      
              
       }, []);
 
-      
+  useEffect(()=>{
+    calculateTotalIncome(incomeData);
+  },[incomeData]);
 
-  const membersIncomeArray = incomeData
-  .map(({ income }) => (income
-    .reduce((sum, item)=>sum+item)));
 
-  const totalIncome = membersIncomeArray
-    .reduce((total, income)=>total+income, 0);
+  const calculateTotalIncome = (data) => {
+    const allIncomes = data.map((member)=>member.incomes);
+    const amounts = allIncomes.map((memberIncomes)=>memberIncomes.map(income=>income.amount));
+    if(amounts.length > 0) {
+      const mergedAmounts = amounts.reduce((array, element)=>[...array, ...element]); 
+      const total = mergedAmounts.reduce((sum, income)=>sum+income);
+      setTotalIncome(total);
+      return total;
+    } else {
+      return 0;
+    }
+  }
 
-      
-      // function sumUpSubcategoryExpenses sums all operations in the corresponding Subcategory
+  useEffect(()=>{
+    calculateTotalExpenses(operationsData);
+  },[operationsData]);
+
+  const calculateTotalExpenses = (data) => {
+    const operationsAmountArray = data.map(operation => operation.amount);
+    if (operationsAmountArray.length > 0) {
+      const total = operationsAmountArray.reduce((total, amount)=> total+amount);
+      setTotalExpenses(total);
+      return total;
+    } else {
+      return 0;
+    }
+  }
+
+
+  // function sumUpSubcategoryExpenses sums us all operations in the corresponding Category or Subcategory
   const sumUpSubcatExpenses = (catID, subCatID) => {
     if (operationsData.length > 0) {
-      const filtered = operationsData.filter(operation => (operation.categoryID === catID && operation.subcategoryID === subCatID));
-      const subcatExspensesArray = filtered.map(el => el.amount);
+      const filtered = subCatID ? 
+          operationsData.filter(operation => (operation.categoryID === catID && operation.subcategoryID === subCatID))
+        : operationsData.filter(operation => (operation.categoryID === catID));
 
-      return (subcatExspensesArray.length > 0) ? 
-      (subcatExspensesArray.reduce((sum, expense) => sum + expense)) :  0; 
+      const exspensesArray = filtered.map(el => el.amount);
+
+      return (exspensesArray.length > 0) ? 
+      (exspensesArray.reduce((sum, expense) => sum + expense)) :  0; 
 
       } else {
       return 0;
     }
   }
 
-
-          
-      // const subcategoryExpensesArray = expensesData.map(category=>category.expenses);
-
-      // const categoryExpensesArray = subcategoryExpensesArray
-      // .map(subcategoryExpenses=>subcategoryExpenses
-      // .reduce((sum, expense)=>sum+expense));
-
-      // const totalExpenses = categoryExpensesArray
-      // .reduce((sum, expense)=>sum+expense, 0);
-     
-
-
-
   const value = {
       incomeData, 
       expensesData, 
       operationsData,
-      // totalExpenses, 
-      // totalIncome, 
+      totalExpenses, 
+      totalIncome, 
       // subcategoryExpensesArray, 
       // categoryExpensesArray, 
       // membersIncomeArray, 
       modalType: 'ddd',
-      sumUpSubcatExpenses
+      sumUpSubcatExpenses, 
+      calculateTotalIncome
   };
 
 
