@@ -34,7 +34,7 @@
     border-top: 4px solid $color-theme;
 }
 
-.expenses-list__subcategory {
+.expenses-list__subcategory, .income-list__subcategory {
    padding-left: 30px;
     font-weight: 400;
     padding-right: 0;
