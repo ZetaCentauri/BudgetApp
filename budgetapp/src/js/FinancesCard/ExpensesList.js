@@ -5,9 +5,6 @@ import { useState, useEffect, useContext } from "react";
 import DataContext from '../DataContext/DataContext';
 
 const ExpensesList = () => {
-
-    // const [data, setData] = useState([]);
-
     
     const {expensesData} = useContext(DataContext);
     

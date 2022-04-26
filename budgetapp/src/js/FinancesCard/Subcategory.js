@@ -4,17 +4,13 @@ import { useContext, useEffect, useState } from "react";
 
 const SubCategory = ({subTitle, subcatID, catID}) => {
 
-    
     const [amount, setAmount] = useState(0);
-
     const {sumUpSubcatExpenses} = useContext(DataContext);
-    
 
     useEffect(()=>{
         setAmount(sumUpSubcatExpenses(catID, subcatID));
     }, []);
 
-   
 return (
     <>
     <div className="expenses-list__subcategory">

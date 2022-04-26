@@ -3,8 +3,6 @@
       {
         "id" : 201,
         "name": "Karol",
-        "jobs":["Praca1", "Praca2", "Praca3"],
-        "income" : [3900, 5000, 600],
         "year": 2022,
         "month": "may",
         "incomes" : [
@@ -25,9 +23,6 @@
         {
           "id" : 202,
           "name": "Marta",
-          "jobs":["Praca1", "Praca2"],
-          "income" : [3900, 600],
-          "year": 2022,
           "month": "may",
           "incomes" : [
             {

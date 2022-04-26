@@ -3,9 +3,8 @@ import { useContext } from "react";
 
 const Summary = () => {
 
-const data = useContext(DataContext); 
-const totalIncome = data.totalIncome;
-const totalExpenses = data.totalExpenses;
+const {totalIncome, totalExpenses} = useContext(DataContext); 
+
 
 
 return (
@@ -20,7 +19,7 @@ return (
             <span>Wydatki:</span><span> {totalExpenses} zł</span>
         </div>
     </div>
-    <div className="summary__total summary__item"><span>Łączny stan kąt:</span><span> {(totalIncome - totalExpenses).toFixed(2)} zł</span></div>
+    <div className="summary__total summary__item"><span>Pozostało:</span><span> {(totalIncome - totalExpenses).toFixed(2)} zł</span></div>
     </div>
 </div>
 )
