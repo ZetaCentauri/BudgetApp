@@ -1,20 +1,30 @@
 import SubCategory from "./Subcategory";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Job from "./Job";
 
-const FamilyMember = ({title, jobs, income}) => {
+const FamilyMember = ({title, incomes}) => {
+
+    const [sum, setSum] = useState(0);
+
+    const incomesArray = incomes.map(income=>income.amount);
+    
+    useEffect(() => {
+        setSum(incomesArray.reduce((total, income)=> total+income));
+    }, []);
+
+
 
 
     return (
         <>
         <div className="income-list__category">
                 <div className="income-list__category--name">{title}</div>
-                <div className="income-list__category--sum"><span>{income.reduce((sum, item)=>sum+item)}</span> zł</div>
+                <div className="income-list__category--sum"><span>{sum}</span> zł</div>
         </div>
         {
-            jobs.map((job, i)=>{
+            incomes.map(({job, amount}, i)=>{
                 return (
-                <Job subTitle={job} amount={income[i]} />
+                <Job key={i} job={job} amount={amount} />
                 )
             })
         }

@@ -6,6 +6,7 @@ const IncomeList = () => {
     // const [data, setData] = useState([])
     const {incomeData} = useContext(DataContext);
     
+    console.log(incomeData);
 
     return (
         <>
@@ -16,8 +17,8 @@ const IncomeList = () => {
              </div>
              
              <div className="income-list__list">
-             {incomeData?.map(({ id, name, jobs, income }) => (
-                 <FamilyMember key={id} title={name} jobs={jobs} income={income}/>
+             {incomeData?.map(({ id, name, incomes }) => (
+                 <FamilyMember key={id} title={name} incomes={incomes}/>
                 ))}
             </div>
             

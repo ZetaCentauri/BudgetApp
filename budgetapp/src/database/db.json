@@ -2,7 +2,7 @@
     "membersIncome": [
       {
         "id" : 201,
-        "name": "Pawel",
+        "name": "Karol",
         "jobs":["Praca1", "Praca2", "Praca3"],
         "income" : [3900, 5000, 600],
         "year": 2022,
@@ -36,7 +36,7 @@
             },
             {
               "job": "Praca2",
-              "amount": 600
+              "amount": 2000
             }
           ]
           }
@@ -50,18 +50,15 @@
       "subcategories" : [
         { 
           "id" : 101,
-          "subcategory" : "w domu",
-          "expenses" : 520
+          "subcategory" : "w domu"
         }, 
         { 
           "id" : 102,
-          "subcategory" : "w pracy",
-          "expenses" : 130
+          "subcategory" : "w pracy"
         },
         { 
           "id" : 103,
-          "subcategory" : "na mieście",
-          "expenses" : 100
+          "subcategory" : "na mieście"
         }
       ]
       },
@@ -72,21 +69,37 @@
         "subcategories" : [
           { 
             "id" : 201,
-            "subcategory" : "kino",
-            "expenses" : 120
+            "subcategory" : "kino"
           }, 
           { 
             "id" : 202,
-            "subcategory" : "ksiąki",
-            "expenses" : 100
+            "subcategory" : "ksiąki"
           },
           { 
             "id" : 203,
-            "subcategory" : "teatr",
-            "expenses" : 200
+            "subcategory" : "teatr"
           }
         ]
-      }
+      }, 
+      {
+        "id":3,
+        "date": "2022 01",
+        "category" : "Zdrowie",
+        "subcategories" : [
+          { 
+            "id" : 301,
+            "subcategory" : "wizyta u lekarza"            
+          }, 
+          { 
+            "id" : 302,
+            "subcategory" : "lekarstwa"            
+          },
+          { 
+            "id" : 303,
+            "subcategory" : "badania"            
+          }
+        ]
+        }
     ],
   
     "subcategories" : [
@@ -147,6 +160,16 @@
         "month" : "february",
         "year" : 2022,
         "amount" : 450
+      }, 
+      {
+        "id" : 506,
+        "categoryID" : 3,
+        "subcategoryID" : 301,
+        "payer": 201,
+        "date": "08.02.2022",
+        "month" : "february",
+        "year" : 2022,
+        "amount" : 200
       }
     ],
     "users" : []
