@@ -5,13 +5,14 @@ const TimePeriod = () => {
 
     const [timePeriod, setTimePeriod] = useState("");
     const {month, setMonth, year, setYear} = useContext(DataContext);
-    const months = ["styczeń","luty","marzec","kwiecień",
+    const months = ["rok","styczeń","luty","marzec","kwiecień",
              "maj","czerwiec","lipiec","sierpień",
              "wrzesień","październik","listopad","grudzień"];
 
     useEffect(()=> {
          const d = new Date();
-        let currentMonth = months[d.getMonth()];
+         console.log(d.getMonth());
+        let currentMonth = months[d.getMonth() + 1];
         let currentYear = d.getFullYear();
         setTimePeriod(`${currentMonth} ${currentYear}`);
     }, []);
@@ -21,7 +22,7 @@ const TimePeriod = () => {
         setMonth(prev => prev + change);
         } else {
             setMonth(1);
-            setYear(prev => prev + 1);   
+            setYear(prev => prev + 1);
         }
 
         setTimePeriod(`${months[month]} ${year}`); 

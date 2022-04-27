@@ -7,6 +7,7 @@ import DataContext from '../DataContext/DataContext';
 const ExpensesList = () => {
     
     const {expensesData} = useContext(DataContext);
+
     
     const displayNewCategoryForm = () => {
         

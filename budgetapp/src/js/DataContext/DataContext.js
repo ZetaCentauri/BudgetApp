@@ -42,13 +42,14 @@ export function DataProvider({children}) {
       setTotalIncome(total);
       return total;
     } else {
+      setTotalIncome(0);
       return 0;
     }
   }
 
   useEffect(()=>{
     calculateTotalExpenses(operationsData);
-  },[operationsData]);
+  },[operationsData, month]);
 
   const calculateTotalExpenses = (data) => {
     const operationsAmountArray = data.map(operation => operation.amount);
@@ -57,6 +58,7 @@ export function DataProvider({children}) {
       setTotalExpenses(total);
       return total;
     } else {
+      setTotalExpenses(0);
       return 0;
     }
   }
