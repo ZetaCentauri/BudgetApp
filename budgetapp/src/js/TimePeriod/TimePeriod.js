@@ -19,11 +19,9 @@ const TimePeriod = () => {
     const handleDate = (change) => {
         if (month < 12) {
         setMonth(prev => prev + change);
-        setTimePeriod(`${months[month]} ${year}`); 
         } else {
             setMonth(1);
-            setYear(prev => prev + 1);
-            setTimePeriod(`${months[month]} ${year}`); 
+            setYear(prev => prev + 1);   
         }
 
         setTimePeriod(`${months[month]} ${year}`); 
