@@ -9,8 +9,9 @@ export function DataProvider({children}) {
   const [operationsData, setOperationsData] = useState([]);
   const [totalIncome, setTotalIncome] = useState(0);
   const [totalExpenses, setTotalExpenses] =useState(0);
-  const [month, setMonth] = useState(("may"));
+  const [month, setMonth] = useState(5);
   const [year, setYear] = useState(2022);
+
 
   useEffect(() => {
         Promise.all ([

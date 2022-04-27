@@ -4,7 +4,7 @@
         "id" : 201,
         "name": "Karol",
         "year": 2022,
-        "month": "may",
+        "month": 5,
         "incomes" : [
           {
             "job": "Praca1",
@@ -24,7 +24,7 @@
           "id" : 202,
           "name": "Marta",
           "year" : 2022,
-          "month": "may",
+          "month": 5,
           "incomes" : [
             {
               "job": "Praca1",
@@ -40,7 +40,7 @@
             "id" : 201,
             "name": "Karol",
             "year": 2022,
-            "month": "june",
+            "month": 6,
             "incomes" : [
               {
                 "job": "Praca1",
@@ -60,7 +60,7 @@
             "id" : 201,
             "name": "Karol",
             "year": 2021,
-            "month": "may",
+            "month": 5,
             "incomes" : [
               {
                 "job": "Praca1",
@@ -153,7 +153,7 @@
         "subcategoryID" : 101,
         "payer": 201,
         "date": "01.02.2022",
-        "month" : "february",
+        "month" : 2,
         "year" : 2022,
         "amount" : 45
       }, 
@@ -163,7 +163,7 @@
         "subcategoryID" : 102,
         "payer": 202,
         "date": "21.02.2022",
-        "month" : "february",
+        "month" : 2,
         "year" : 2022,
         "amount" : 20
       },
@@ -173,7 +173,7 @@
         "subcategoryID" : 101,
         "payer": 201,
         "date": "01.02.2022",
-        "month" : "february",
+        "month" : 2,
         "year" : 2022,
         "amount" : 45
       }, 
@@ -183,7 +183,7 @@
         "subcategoryID" : 201,
         "payer": 202,
         "date": "05.02.2022",
-        "month" : "february",
+        "month" : 2,
         "year" : 2022,
         "amount" : 5
       }, 
@@ -193,7 +193,7 @@
         "subcategoryID" : 101,
         "payer": 201,
         "date": "01.02.2022",
-        "month" : "february",
+        "month" : 2,
         "year" : 2022,
         "amount" : 450
       }, 
@@ -203,7 +203,7 @@
         "subcategoryID" : 301,
         "payer": 201,
         "date": "08.02.2022",
-        "month" : "february",
+        "month" : 2,
         "year" : 2022,
         "amount" : 200
       },
@@ -213,7 +213,7 @@
         "subcategoryID" : 301,
         "payer": 201,
         "date": "08.02.2022",
-        "month" : "may",
+        "month" : 5,
         "year" : 2022,
         "amount" : 100
       },
@@ -223,7 +223,7 @@
         "subcategoryID" : 302,
         "payer": 201,
         "date": "08.02.2022",
-        "month" : "may",
+        "month" : 5,
         "year" : 2022,
         "amount" : 200
       }
