@@ -23,6 +23,7 @@
         {
           "id" : 202,
           "name": "Marta",
+          "year" : 2022,
           "month": "may",
           "incomes" : [
             {
@@ -34,7 +35,47 @@
               "amount": 2000
             }
           ]
-          }
+          },
+          {
+            "id" : 201,
+            "name": "Karol",
+            "year": 2022,
+            "month": "june",
+            "incomes" : [
+              {
+                "job": "Praca1",
+                "amount": 3900
+              },
+              {
+                "job": "Praca2",
+                "amount": 5000
+              },
+              {
+                "job": "Praca3",
+                "amount": 600
+              }
+            ]
+          },
+          {
+            "id" : 201,
+            "name": "Karol",
+            "year": 2021,
+            "month": "may",
+            "incomes" : [
+              {
+                "job": "Praca1",
+                "amount": 3900
+              },
+              {
+                "job": "Praca2",
+                "amount": 5000
+              },
+              {
+                "job": "Praca3",
+                "amount": 600
+              }
+            ]
+            }
     ],
   
     "categories": [
@@ -165,7 +206,28 @@
         "month" : "february",
         "year" : 2022,
         "amount" : 200
+      },
+      {
+        "id" : 507,
+        "categoryID" : 3,
+        "subcategoryID" : 301,
+        "payer": 201,
+        "date": "08.02.2022",
+        "month" : "may",
+        "year" : 2022,
+        "amount" : 100
+      },
+      {
+        "id" : 508,
+        "categoryID" : 3,
+        "subcategoryID" : 302,
+        "payer": 201,
+        "date": "08.02.2022",
+        "month" : "may",
+        "year" : 2022,
+        "amount" : 200
       }
     ],
+
     "users" : []
   }

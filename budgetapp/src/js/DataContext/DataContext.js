@@ -9,12 +9,14 @@ export function DataProvider({children}) {
   const [operationsData, setOperationsData] = useState([]);
   const [totalIncome, setTotalIncome] = useState(0);
   const [totalExpenses, setTotalExpenses] =useState(0);
+  const [month, setMonth] = useState(("may"));
+  const [year, setYear] = useState(2022);
 
   useEffect(() => {
         Promise.all ([
-          fetch("http://localhost:3005/membersIncome"), 
+          fetch(`http://localhost:3005/membersIncome?month=${month}&&year=${year}`), 
           fetch("http://localhost:3005/categories"),
-          fetch("http://localhost:3005/operations")
+          fetch(`http://localhost:3005/operations?month=${month}&&year=${year}`)
           ]).then((result) => {
             return Promise.all(result.map(r=>r.json()))
             }).then(([data1, data2, data3]) => {
@@ -23,7 +25,7 @@ export function DataProvider({children}) {
                 setOperationsData(data3);
               });      
              
-      }, []);
+      }, [month, year]);
 
   useEffect(()=>{
     calculateTotalIncome(incomeData);
@@ -86,8 +88,13 @@ export function DataProvider({children}) {
       // categoryExpensesArray, 
       // membersIncomeArray, 
       modalType: 'ddd',
+      month,
+      setMonth,
+      year,
+      setYear,
       sumUpSubcatExpenses, 
-      calculateTotalIncome
+      calculateTotalIncome,
+
   };
 
 
