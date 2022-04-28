@@ -4,7 +4,7 @@ import FamilyMember from "./FamilyMember";
 
 const IncomeList = () => {
     // const [data, setData] = useState([])
-    const {incomeData} = useContext(DataContext);
+    const {incomeData, setModalType} = useContext(DataContext);
 
 
     return (
@@ -22,7 +22,7 @@ const IncomeList = () => {
             </div>
             
         </div>
-        <button className="btn">Dodaj członka rodziny</button>
+        <button className="btn" onClick={()=>setModalType("member")}>Dodaj członka rodziny</button>
         </>
     )
 }

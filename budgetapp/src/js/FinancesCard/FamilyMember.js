@@ -1,10 +1,12 @@
 import SubCategory from "./Subcategory";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Job from "./Job";
+import DataContext from "../DataContext/DataContext";
 
 const FamilyMember = ({title, incomes}) => {
 
     const [sum, setSum] = useState(0);
+    const {setModalType} = useContext(DataContext);
 
     const incomesArray = incomes.map(income=>income.amount);
     
@@ -28,7 +30,7 @@ const FamilyMember = ({title, incomes}) => {
                 )
             })
         }
-        <button className="btn">Dodaj przychód</button>
+        <button className="btn" onClick={()=>setModalType("income")}>Dodaj przychód</button>
         </>
     )
 }

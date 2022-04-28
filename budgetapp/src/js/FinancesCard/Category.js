@@ -6,7 +6,7 @@ const Category = ({title, subCategories, catID}) => {
 
     
     const [sum, setSum] = useState(0);
-    const {sumUpSubcatExpenses, month} = useContext(DataContext);
+    const {sumUpSubcatExpenses, month, setModalType} = useContext(DataContext);
     
     useEffect(()=> {
         setSum(sumUpSubcatExpenses(catID));
@@ -25,7 +25,7 @@ const Category = ({title, subCategories, catID}) => {
                 return <SubCategory key={id} subTitle={subcategory} subcatID = {id} catID={catID}/>
             })
         }
-        <button className="btn">Dodaj podkategorię</button>
+        <button className="btn" onClick={()=>setModalType("subcategory")}>Dodaj podkategorię</button>
         </>
     )
 }
