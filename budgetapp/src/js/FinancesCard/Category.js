@@ -4,12 +4,13 @@ import DataContext from '../DataContext/DataContext';
 
 const Category = ({title, subCategories, catID}) => {
 
-    const [operationsArray, setOperationsArray] = useState([]); 
+    
     const [sum, setSum] = useState(0);
-    const {sumUpSubcatExpenses, sumUpCatExpenses} = useContext(DataContext);
+    const {sumUpSubcatExpenses, month} = useContext(DataContext);
+    
     useEffect(()=> {
         setSum(sumUpSubcatExpenses(catID));
-    }, [])
+    },[month])
    
 
     return (
@@ -18,6 +19,7 @@ const Category = ({title, subCategories, catID}) => {
         <div className="expenses-list__category">
                 <div className="expenses-list__category--name">{title}</div>
                 <div className="expenses-list__category--sum"><span>{sum}</span> zł</div>
+                {console.log(sum)}
         </div>
         {
             subCategories.map(({subcategory, id}) => {

@@ -226,6 +226,26 @@
         "month" : 5,
         "year" : 2022,
         "amount" : 200
+      },
+      {
+        "id" : 509,
+        "categoryID" : 1,
+        "subcategoryID" : 102,
+        "payer": 201,
+        "date": "08.02.2022",
+        "month" : 6,
+        "year" : 2022,
+        "amount" : 200
+      },
+      {
+        "id" : 510,
+        "categoryID" : 1,
+        "subcategoryID" : 102,
+        "payer": 201,
+        "date": "08.02.2022",
+        "month" : 7,
+        "year" : 2022,
+        "amount" : 120
       }
     ],
 

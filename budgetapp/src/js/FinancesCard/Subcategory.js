@@ -5,11 +5,13 @@ import { useContext, useEffect, useState } from "react";
 const SubCategory = ({subTitle, subcatID, catID}) => {
 
     const [amount, setAmount] = useState(0);
-    const {sumUpSubcatExpenses} = useContext(DataContext);
+    const {sumUpSubcatExpenses, month} = useContext(DataContext);
+   
+   
 
     useEffect(()=>{
-        setAmount(sumUpSubcatExpenses(catID, subcatID));
-    }, []);
+     setAmount(sumUpSubcatExpenses(catID, subcatID));
+    }, [month]);
 
 return (
     <>
