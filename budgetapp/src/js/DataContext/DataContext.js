@@ -72,6 +72,7 @@ export function DataProvider({children}) {
         : operationsData.filter(operation => (operation.categoryID === catID));
 
       const exspensesArray = filtered.map(el => el.amount);
+      console.log("LIczę")
 
       return (exspensesArray.length > 0) ? 
       (exspensesArray.reduce((sum, expense) => sum + expense)) :  0; 

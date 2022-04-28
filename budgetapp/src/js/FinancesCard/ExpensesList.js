@@ -9,9 +9,9 @@ const ExpensesList = () => {
     const {expensesData} = useContext(DataContext);
 
     
-    const displayNewCategoryForm = () => {
+    // const displayNewCategoryForm = () => {
         
-    }
+    // }
     
 
     return (

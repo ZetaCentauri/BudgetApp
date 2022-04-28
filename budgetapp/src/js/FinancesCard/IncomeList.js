@@ -6,7 +6,6 @@ const IncomeList = () => {
     // const [data, setData] = useState([])
     const {incomeData} = useContext(DataContext);
 
-    
 
     return (
         <>
