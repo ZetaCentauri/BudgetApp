@@ -11,6 +11,7 @@ export function DataProvider({children}) {
   const [totalExpenses, setTotalExpenses] =useState(0);
   const [month, setMonth] = useState(1);
   const [year, setYear] = useState(2022);
+  const [modalType, setModalType] = useState("none");
 
 
   useEffect(() => {
@@ -64,6 +65,7 @@ export function DataProvider({children}) {
   }
 
 
+
   // function sumUpSubcategoryExpenses sums us all operations in the corresponding Category or Subcategory
   const sumUpSubcatExpenses = (catID, subCatID) => {
     if (operationsData.length > 0) {
@@ -72,7 +74,7 @@ export function DataProvider({children}) {
         : operationsData.filter(operation => (operation.categoryID === catID));
 
       const exspensesArray = filtered.map(el => el.amount);
-      console.log("LIczę")
+      console.log("LIczę") 
 
       return (exspensesArray.length > 0) ? 
       (exspensesArray.reduce((sum, expense) => sum + expense)) :  0; 
@@ -88,14 +90,14 @@ export function DataProvider({children}) {
       operationsData,
       totalExpenses, 
       totalIncome, 
-      modalType: 'ddd',
+      modalType,
+      setModalType,
       month,
       setMonth,
       year,
       setYear,
       sumUpSubcatExpenses, 
-      calculateTotalIncome,
-
+      calculateTotalIncome
   };
 
 

@@ -6,8 +6,8 @@ import DataContext from '../DataContext/DataContext';
 
 const ExpensesList = () => {
     
-    const {expensesData} = useContext(DataContext);
-
+    const {expensesData, sumUpSubcatExpenses, setModalType} = useContext(DataContext);
+    
     
     // const displayNewCategoryForm = () => {
         
@@ -24,11 +24,13 @@ const ExpensesList = () => {
 
                 <div className="expenses-list__list">
                 {expensesData?.map(({ id, category, subcategories}) => (
-                   <Category key={id} title={category} subCategories={subcategories} catID={id}/>
+                   <Category key={id} title={category} subCategories={subcategories} catID={id}>
+                       {sumUpSubcatExpenses(id)}
+                   </Category>
                 ))}
                 </div>
             </div>
-            <button className="btn"> Dodaj kategorię</button>
+            <button className="btn" onClick={()=>setModalType("category")}> Dodaj kategorię</button>
     
         </>
         );

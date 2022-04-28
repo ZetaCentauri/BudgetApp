@@ -1,4 +1,4 @@
-import TimePeriod from "../TimePeriod";
+import  TimePeriod from '../TimePeriod/TimePeriod';
 import DataContext from '../DataContext/DataContext';
 import { useContext } from "react";
 

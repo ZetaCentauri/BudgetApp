@@ -8,7 +8,6 @@ const SubCategory = ({subTitle, subcatID, catID}) => {
     const {sumUpSubcatExpenses, month} = useContext(DataContext);
    
    
-
     useEffect(()=>{
      setAmount(sumUpSubcatExpenses(catID, subcatID));
     }, [month]);
