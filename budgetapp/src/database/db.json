@@ -1,253 +1,291 @@
 {
-    "membersIncome": [
-      {
-        "id" : 201,
-        "name": "Karol",
-        "year": 2022,
-        "month": 5,
-        "incomes" : [
-          {
-            "job": "Praca1",
-            "amount": 3900
-          },
-          {
-            "job": "Praca2",
-            "amount": 5000
-          },
-          {
-            "job": "Praca3",
-            "amount": 600
-          }
-        ]
+  "membersIncome": [
+    {
+      "id": 201,
+      "name": "Karol",
+      "year": 2022,
+      "month": 5,
+      "incomes": [
+        {
+          "job": "Praca1",
+          "amount": 3900
         },
         {
-          "id" : 202,
-          "name": "Marta",
-          "year" : 2022,
-          "month": 5,
-          "incomes" : [
-            {
-              "job": "Praca1",
-              "amount": 3900
-            },
-            {
-              "job": "Praca2",
-              "amount": 2000
-            }
-          ]
-          },
-          {
-            "id" : 201,
-            "name": "Karol",
-            "year": 2022,
-            "month": 6,
-            "incomes" : [
-              {
-                "job": "Praca1",
-                "amount": 3900
-              },
-              {
-                "job": "Praca2",
-                "amount": 5000
-              },
-              {
-                "job": "Praca3",
-                "amount": 600
-              }
-            ]
-          },
-          {
-            "id" : 201,
-            "name": "Karol",
-            "year": 2021,
-            "month": 5,
-            "incomes" : [
-              {
-                "job": "Praca1",
-                "amount": 3900
-              },
-              {
-                "job": "Praca2",
-                "amount": 5000
-              },
-              {
-                "job": "Praca3",
-                "amount": 600
-              }
-            ]
-            }
-    ],
-  
-    "categories": [
-      {
-      "id":1,
-      "date": "2022 01",
-      "category" : "Jedzenie",
-      "subcategories" : [
-        { 
-          "id" : 101,
-          "subcategory" : "w domu"
-        }, 
-        { 
-          "id" : 102,
-          "subcategory" : "w pracy"
+          "job": "Praca2",
+          "amount": 5000
         },
-        { 
-          "id" : 103,
-          "subcategory" : "na mieście"
+        {
+          "job": "Praca3",
+          "amount": 600
         }
       ]
-      },
-      {
-        "id":2,
-        "date": "2022 01",
-        "category" : "Rozrywka",
-        "subcategories" : [
-          { 
-            "id" : 201,
-            "subcategory" : "kino"
-          }, 
-          { 
-            "id" : 202,
-            "subcategory" : "ksiąki"
-          },
-          { 
-            "id" : 203,
-            "subcategory" : "teatr"
-          }
-        ]
-      }, 
-      {
-        "id":3,
-        "date": "2022 01",
-        "category" : "Zdrowie",
-        "subcategories" : [
-          { 
-            "id" : 301,
-            "subcategory" : "wizyta u lekarza"            
-          }, 
-          { 
-            "id" : 302,
-            "subcategory" : "lekarstwa"            
-          },
-          { 
-            "id" : 303,
-            "subcategory" : "badania"            
-          }
-        ]
+    },
+    {
+      "id": 202,
+      "name": "Marta",
+      "year": 2022,
+      "month": 5,
+      "incomes": [
+        {
+          "job": "Praca1",
+          "amount": 3900
+        },
+        {
+          "job": "Praca2",
+          "amount": 2000
         }
-    ],
-  
-    "subcategories" : [
-      {
-        "name" : "w domu",
-        "category" : "jedzenie",
-        "amount": 520
-      }
-    ],
-  
-    "operations" : [
-      {
-        "id" : 501,
-        "categoryID" : 1,
-        "subcategoryID" : 101,
-        "payer": 201,
-        "date": "01.02.2022",
-        "month" : 2,
-        "year" : 2022,
-        "amount" : 45
-      }, 
-      {
-        "id" : 502,
-        "categoryID" : 1,
-        "subcategoryID" : 102,
-        "payer": 202,
-        "date": "21.02.2022",
-        "month" : 2,
-        "year" : 2022,
-        "amount" : 20
-      },
-      {
-        "id" : 503,
-        "categoryID" : 1,
-        "subcategoryID" : 101,
-        "payer": 201,
-        "date": "01.02.2022",
-        "month" : 2,
-        "year" : 2022,
-        "amount" : 45
-      }, 
-      {
-        "id" : 504,
-        "categoryID" : 2,
-        "subcategoryID" : 201,
-        "payer": 202,
-        "date": "05.02.2022",
-        "month" : 2,
-        "year" : 2022,
-        "amount" : 5
-      }, 
-      {
-        "id" : 505,
-        "categoryID" : 1,
-        "subcategoryID" : 101,
-        "payer": 201,
-        "date": "01.02.2022",
-        "month" : 2,
-        "year" : 2022,
-        "amount" : 450
-      }, 
-      {
-        "id" : 506,
-        "categoryID" : 3,
-        "subcategoryID" : 301,
-        "payer": 201,
-        "date": "08.02.2022",
-        "month" : 2,
-        "year" : 2022,
-        "amount" : 200
-      },
-      {
-        "id" : 507,
-        "categoryID" : 3,
-        "subcategoryID" : 301,
-        "payer": 201,
-        "date": "08.02.2022",
-        "month" : 5,
-        "year" : 2022,
-        "amount" : 100
-      },
-      {
-        "id" : 508,
-        "categoryID" : 3,
-        "subcategoryID" : 302,
-        "payer": 201,
-        "date": "08.02.2022",
-        "month" : 5,
-        "year" : 2022,
-        "amount" : 200
-      },
-      {
-        "id" : 509,
-        "categoryID" : 1,
-        "subcategoryID" : 102,
-        "payer": 201,
-        "date": "08.02.2022",
-        "month" : 6,
-        "year" : 2022,
-        "amount" : 200
-      },
-      {
-        "id" : 510,
-        "categoryID" : 1,
-        "subcategoryID" : 102,
-        "payer": 201,
-        "date": "08.02.2022",
-        "month" : 7,
-        "year" : 2022,
-        "amount" : 120
-      }
-    ],
-
-    "users" : []
-  }
+      ]
+    },
+    {
+      "id": 201,
+      "name": "Karol",
+      "year": 2022,
+      "month": 6,
+      "incomes": [
+        {
+          "job": "Praca1",
+          "amount": 3900
+        },
+        {
+          "job": "Praca2",
+          "amount": 5000
+        },
+        {
+          "job": "Praca3",
+          "amount": 600
+        }
+      ]
+    },
+    {
+      "id": 201,
+      "name": "Karol",
+      "year": 2021,
+      "month": 5,
+      "incomes": [
+        {
+          "job": "Praca1",
+          "amount": 3900
+        },
+        {
+          "job": "Praca2",
+          "amount": 5000
+        },
+        {
+          "job": "Praca3",
+          "amount": 600
+        }
+      ]
+    },
+    {
+      "name": "Maria",
+      "year": 2000,
+      "month": 50,
+      "incomes": [],
+      "id": 203
+    },
+    {
+      "name": "Marek",
+      "year": 2000,
+      "month": 50,
+      "incomes": [],
+      "id": 204
+    },
+    {
+      "name": "Kasia",
+      "year": 2022,
+      "month": 4,
+      "incomes": [],
+      "id": 205
+    },
+    {
+      "name": "Marta",
+      "year": 2022,
+      "month": 4,
+      "incomes": [],
+      "id": 206
+    },
+    {
+      "name": "Filip",
+      "year": 2022,
+      "month": 4,
+      "incomes": [],
+      "id": 207
+    },
+    {
+      "name": "Ola",
+      "year": 2022,
+      "month": 4,
+      "incomes": [],
+      "id": 208
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "date": "2022 01",
+      "category": "Jedzenie",
+      "subcategories": [
+        {
+          "id": 101,
+          "subcategory": "w domu"
+        },
+        {
+          "id": 102,
+          "subcategory": "w pracy"
+        },
+        {
+          "id": 103,
+          "subcategory": "na mieście"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "date": "2022 01",
+      "category": "Rozrywka",
+      "subcategories": [
+        {
+          "id": 201,
+          "subcategory": "kino"
+        },
+        {
+          "id": 202,
+          "subcategory": "ksiąki"
+        },
+        {
+          "id": 203,
+          "subcategory": "teatr"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "date": "2022 01",
+      "category": "Zdrowie",
+      "subcategories": [
+        {
+          "id": 301,
+          "subcategory": "wizyta u lekarza"
+        },
+        {
+          "id": 302,
+          "subcategory": "lekarstwa"
+        },
+        {
+          "id": 303,
+          "subcategory": "badania"
+        }
+      ]
+    }
+  ],
+  "subcategories": [
+    {
+      "name": "w domu",
+      "category": "jedzenie",
+      "amount": 520
+    }
+  ],
+  "operations": [
+    {
+      "id": 501,
+      "categoryID": 1,
+      "subcategoryID": 101,
+      "payer": 201,
+      "date": "01.02.2022",
+      "month": 2,
+      "year": 2022,
+      "amount": 45
+    },
+    {
+      "id": 502,
+      "categoryID": 1,
+      "subcategoryID": 102,
+      "payer": 202,
+      "date": "21.02.2022",
+      "month": 2,
+      "year": 2022,
+      "amount": 20
+    },
+    {
+      "id": 503,
+      "categoryID": 1,
+      "subcategoryID": 101,
+      "payer": 201,
+      "date": "01.02.2022",
+      "month": 2,
+      "year": 2022,
+      "amount": 45
+    },
+    {
+      "id": 504,
+      "categoryID": 2,
+      "subcategoryID": 201,
+      "payer": 202,
+      "date": "05.02.2022",
+      "month": 2,
+      "year": 2022,
+      "amount": 5
+    },
+    {
+      "id": 505,
+      "categoryID": 1,
+      "subcategoryID": 101,
+      "payer": 201,
+      "date": "01.02.2022",
+      "month": 2,
+      "year": 2022,
+      "amount": 450
+    },
+    {
+      "id": 506,
+      "categoryID": 3,
+      "subcategoryID": 301,
+      "payer": 201,
+      "date": "08.02.2022",
+      "month": 2,
+      "year": 2022,
+      "amount": 200
+    },
+    {
+      "id": 507,
+      "categoryID": 3,
+      "subcategoryID": 301,
+      "payer": 201,
+      "date": "08.02.2022",
+      "month": 5,
+      "year": 2022,
+      "amount": 100
+    },
+    {
+      "id": 508,
+      "categoryID": 3,
+      "subcategoryID": 302,
+      "payer": 201,
+      "date": "08.02.2022",
+      "month": 5,
+      "year": 2022,
+      "amount": 200
+    },
+    {
+      "id": 509,
+      "categoryID": 1,
+      "subcategoryID": 102,
+      "payer": 201,
+      "date": "08.02.2022",
+      "month": 6,
+      "year": 2022,
+      "amount": 200
+    },
+    {
+      "id": 510,
+      "categoryID": 1,
+      "subcategoryID": 102,
+      "payer": 201,
+      "date": "08.02.2022",
+      "month": 7,
+      "year": 2022,
+      "amount": 120
+    }
+  ],
+  "users": []
+}

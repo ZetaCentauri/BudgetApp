@@ -15,6 +15,7 @@ const TimePeriod = () => {
         let currentYear = d.getFullYear();
         setTimePeriod(`${currentMonth} ${currentYear}`);
         setMonth(d.getMonth()+1);
+        setYear(currentYear);
     }, []);
 
     useEffect(()=> {

@@ -1,16 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import DataContext from '../DataContext/DataContext';
 import AddMemberForm from './AddMemberForm';
+import AddIncomeForm from './AddIncomeForm';
+import AddCategoryForm from './AddCategoryForm';
+import AddSubcategoryForm from './AddSubcategoryForm';
+import AddOperationForm from './AddOperationForm';
 
 const Modal = () => {
     const { modalType: type } = useContext(DataContext);
-
+  
+   
     const getForm = () => {
     switch (type) {
-        case "member": 
+        case "member":    
             return <AddMemberForm />;
-            default: 
-                return <h1>Brak forma</h1>
+        case "income":
+            return <AddIncomeForm/>;
+        case "category":
+            return <AddCategoryForm/>;
+        case "subcategory":
+            return <AddSubcategoryForm/>;
+        case "operation":
+            return <AddOperationForm/>
+        default: 
+            return null
     }
 }
 

@@ -11,7 +11,11 @@ const FamilyMember = ({title, incomes}) => {
     const incomesArray = incomes.map(income=>income.amount);
     
     useEffect(() => {
+        if (incomesArray.length > 0) {
         setSum(incomesArray.reduce((total, income)=> total+income));
+        } else {
+            setSum(0);
+        }
     }, []);
 
 
