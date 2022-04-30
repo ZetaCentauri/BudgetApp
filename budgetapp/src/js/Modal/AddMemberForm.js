@@ -7,7 +7,7 @@ const AddMemberForm = () => {
     const [memberName, setMemberName] = useState(""); 
     
 
-    const {month, year, setModalType, setMembersList, membersList} = useContext(DataContext);
+    const {month, year, setModalType,setNewRequest} = useContext(DataContext);
 
     const addMember = (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ const AddMemberForm = () => {
     
         createMember(member);
         setModalType(null);
-        setMembersList([...membersList, memberName])
+        setNewRequest(true);
     }
 
     return (

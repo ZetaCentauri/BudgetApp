@@ -12,7 +12,8 @@ export function DataProvider({children}) {
   const [month, setMonth] = useState();
   const [year, setYear] = useState();
   const [modalType, setModalType] = useState();
-  const [membersList, setMembersList] = useState([]);
+  const [newRequest, setNewRequest] = useState([false]);
+  const [familyMembers, setFamilyMembers] = useState([]);
   
 
 
@@ -28,11 +29,13 @@ export function DataProvider({children}) {
                 setExpensesData(data2);
                 setOperationsData(data3);
               });       
-      }, [month, membersList]);
+      }, [month, newRequest]);
 
   useEffect(()=>{
     calculateTotalIncome(incomeData);
+    setFamilyMembers(incomeData.map(member=>member.name));
   },[incomeData]);
+
 
 
   const calculateTotalIncome = (data) => {
@@ -103,8 +106,8 @@ export function DataProvider({children}) {
       setYear,
       sumUpSubcatExpenses, 
       calculateTotalIncome,
-      membersList,
-      setMembersList
+      newRequest,
+      setNewRequest
   };
 
 

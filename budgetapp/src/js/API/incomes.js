@@ -1,4 +1,4 @@
-export const createMember = (incomes, memberID) => {
+export const createIncome = (incomes, memberID) => {
     fetch(`http://localhost:3005/membersIncome/${memberID}`, {
         headers: {
             "Content-Type": "application/json"
