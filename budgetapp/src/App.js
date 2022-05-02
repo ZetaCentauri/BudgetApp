@@ -9,6 +9,7 @@ function App() {
     <HashRouter>
     <Layout>
       <Routes>
+          <Route path="/*" element={<FinancesCard />} />
           <Route path="/finances/*" element={<FinancesCard />} />
           {/* <Route path="/accounts" element={<Accounts_Card/>}/> */}
           <Route path="/operations" element={<OperationsCard/>}/>

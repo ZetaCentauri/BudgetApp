@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from './Navigation';
 import Summary from '../Summary';
+import Modal from '../Modal';
 
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
@@ -29,7 +30,7 @@ const Layout = ({ children }) => {
             <Navigation/>
             {children} 
             <Summary/>
-            {/* <Modal /> */}
+            <Modal />
           </DataProvider>
         </main>
  

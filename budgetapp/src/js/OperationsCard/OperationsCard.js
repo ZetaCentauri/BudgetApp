@@ -1,15 +1,11 @@
-import TimePeriod from "../TimePeriod";
+import  TimePeriod from '../TimePeriod/TimePeriod';
 import DataContext from '../DataContext/DataContext';
 import { useContext } from "react";
 
 const OperationsCard = () => {
 
-    const {operationsData, expensesData} = useContext(DataContext);
+    const {operationsData, expensesData, setModalType} = useContext(DataContext);
 
-    
-  
-
-    // const categoryName = expensesData.find(category=> category.id === categoryID).name;
 
     const handleCategory = (catID, data) => {
        return data.find(record=> record.id === catID).category;
@@ -21,7 +17,6 @@ const OperationsCard = () => {
     }
 
    
-
     return (
         
         <div className="card">
@@ -48,7 +43,7 @@ const OperationsCard = () => {
                 }
                 </div>
             </div>
-            <button className="btn"> Dodaj operację</button>
+            <button className="btn" onClick={()=>setModalType("operation")}> Dodaj operację</button>
         </div>
     
     )

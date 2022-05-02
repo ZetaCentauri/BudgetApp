@@ -9,8 +9,13 @@ export function DataProvider({children}) {
   const [operationsData, setOperationsData] = useState([]);
   const [totalIncome, setTotalIncome] = useState(0);
   const [totalExpenses, setTotalExpenses] =useState(0);
-  const [month, setMonth] = useState(("may"));
-  const [year, setYear] = useState(2022);
+  const [month, setMonth] = useState();
+  const [year, setYear] = useState();
+  const [modalType, setModalType] = useState();
+  const [newRequest, setNewRequest] = useState([false]);
+  
+  
+
 
   useEffect(() => {
         Promise.all ([
@@ -23,31 +28,39 @@ export function DataProvider({children}) {
                 setIncomeData(data1);
                 setExpensesData(data2);
                 setOperationsData(data3);
-              });      
-             
-      }, [month, year]);
+                setNewRequest(false);
+              });       
+      }, [month, newRequest]);
 
   useEffect(()=>{
     calculateTotalIncome(incomeData);
+  
   },[incomeData]);
+
 
 
   const calculateTotalIncome = (data) => {
     const allIncomes = data.map((member)=>member.incomes);
+    
     const amounts = allIncomes.map((memberIncomes)=>memberIncomes.map(income=>income.amount));
-    if(amounts.length > 0) {
+    if (amounts.length){
       const mergedAmounts = amounts.reduce((array, element)=>[...array, ...element]); 
+      if (mergedAmounts.length){
       const total = mergedAmounts.reduce((sum, income)=>sum+income);
       setTotalIncome(total);
       return total;
+      } else {
+        setTotalIncome(0);
+      }
     } else {
+      setTotalIncome(0);
       return 0;
     }
   }
 
   useEffect(()=>{
     calculateTotalExpenses(operationsData);
-  },[operationsData]);
+  },[operationsData, month]);
 
   const calculateTotalExpenses = (data) => {
     const operationsAmountArray = data.map(operation => operation.amount);
@@ -56,6 +69,7 @@ export function DataProvider({children}) {
       setTotalExpenses(total);
       return total;
     } else {
+      setTotalExpenses(0);
       return 0;
     }
   }
@@ -69,6 +83,7 @@ export function DataProvider({children}) {
         : operationsData.filter(operation => (operation.categoryID === catID));
 
       const exspensesArray = filtered.map(el => el.amount);
+      
 
       return (exspensesArray.length > 0) ? 
       (exspensesArray.reduce((sum, expense) => sum + expense)) :  0; 
@@ -84,17 +99,16 @@ export function DataProvider({children}) {
       operationsData,
       totalExpenses, 
       totalIncome, 
-      // subcategoryExpensesArray, 
-      // categoryExpensesArray, 
-      // membersIncomeArray, 
-      modalType: 'ddd',
+      modalType,
+      setModalType,
       month,
       setMonth,
       year,
       setYear,
       sumUpSubcatExpenses, 
       calculateTotalIncome,
-
+      newRequest,
+      setNewRequest
   };
 
 

@@ -1,1 +1,1 @@
-export {default} from './TimePerion';
+export {default} from './TimePeriod';

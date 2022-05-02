@@ -4,12 +4,13 @@ import DataContext from '../DataContext/DataContext';
 
 const Category = ({title, subCategories, catID}) => {
 
-    const [operationsArray, setOperationsArray] = useState([]); 
+    
     const [sum, setSum] = useState(0);
-    const {sumUpSubcatExpenses, sumUpCatExpenses} = useContext(DataContext);
+    const {sumUpSubcatExpenses, month, setModalType} = useContext(DataContext);
+    
     useEffect(()=> {
         setSum(sumUpSubcatExpenses(catID));
-    }, [])
+    },[month])
    
 
     return (
@@ -24,7 +25,7 @@ const Category = ({title, subCategories, catID}) => {
                 return <SubCategory key={id} subTitle={subcategory} subcatID = {id} catID={catID}/>
             })
         }
-        <button className="btn">Dodaj podkategorię</button>
+        <button className="btn" onClick={()=>setModalType("subcategory")}>Dodaj podkategorię</button>
         </>
     )
 }
