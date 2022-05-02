@@ -112,7 +112,12 @@
       "name": "Filip",
       "year": 2022,
       "month": 4,
-      "incomes": [],
+      "incomes": [
+        {
+          "job": "jko",
+          "amount": 800
+        }
+      ],
       "id": 8,
       "memberID": 205
     },
@@ -149,7 +154,12 @@
       "name": "Wiola",
       "year": 2022,
       "month": 5,
-      "incomes": [],
+      "incomes": [
+        {
+          "job": "hji",
+          "amount": 90
+        }
+      ],
       "memberID": 12,
       "id": 12
     },

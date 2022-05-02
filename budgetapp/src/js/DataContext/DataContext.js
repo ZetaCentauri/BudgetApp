@@ -76,7 +76,7 @@ export function DataProvider({children}) {
 
 
   // function sumUpSubcategoryExpenses sums us all operations in the corresponding Category or Subcategory
-  const sumUpSubcatExpenses = (catID, subCatID) => {
+  const sumUpSubcatExpenses = (catID, subCatID, data) => {
     if (operationsData.length > 0) {
       const filtered = subCatID ? 
           operationsData.filter(operation => (operation.categoryID === catID && operation.subcategoryID === subCatID))

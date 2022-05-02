@@ -6,11 +6,11 @@ const Category = ({title, subCategories, catID}) => {
 
     
     const [sum, setSum] = useState(0);
-    const {sumUpSubcatExpenses, month, setModalType} = useContext(DataContext);
+    const {sumUpSubcatExpenses, operationsData, setModalType} = useContext(DataContext);
     
     useEffect(()=> {
         setSum(sumUpSubcatExpenses(catID));
-    },[month])
+    },[operationsData])
    
 
     return (
