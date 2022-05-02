@@ -136,7 +136,12 @@
       "name": "Danka",
       "year": 2022,
       "month": 5,
-      "incomes": [],
+      "incomes": [
+        {
+          "job": "Moja",
+          "amount": 2000
+        }
+      ],
       "id": 11,
       "memberID": 208
     },

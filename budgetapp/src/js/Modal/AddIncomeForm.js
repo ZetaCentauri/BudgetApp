@@ -5,7 +5,7 @@ import { createIncome } from "../API/incomes";
 const AddIncomeForm = () => {
 
     const {incomeData, setModalType, setNewRequest} = useContext(DataContext);
-    const [memberID, setMemberID] = useState();
+    const [incomesID, setIncomesID] = useState();
     const [jobName, setJobName] = useState("");
     const [amount, setAmount] = useState(0);
     
@@ -16,7 +16,7 @@ const AddIncomeForm = () => {
     const addIncome = (e) => {
         e.preventDefault();
 
-        const previousIncomes = incomeData.find(member=>(member.id===201)).incomes;
+        const previousIncomes = incomeData.find(member=>(member.id===incomesID)).incomes;
         
 
         const incomesArray = {
@@ -24,13 +24,13 @@ const AddIncomeForm = () => {
                 ...previousIncomes,
                 {
                     job : jobName,
-                    amount : parseFloat(amount)
+                    amount : amount
                 }
             ]
         }
 
     
-        createIncome(incomesArray, memberID);
+        createIncome(incomesArray, incomesID);
         setModalType(null);
         setNewRequest(true);
     }
@@ -38,14 +38,14 @@ const AddIncomeForm = () => {
     return (
         <form className="add-member__form" onSubmit={addIncome} >
             <label>Członek rodziny</label>
-            <select value={memberID} onChange={e=>setMemberID(e.target.value)}>
-                {incomeData.map(member=>
-                    <option value={member.id} key={member.id}>{member.name}</option>)}
+            <select value={incomesID} onChange={e=>setIncomesID(parseInt(e.target.value))}>
+                {incomeData.map(incomes=>
+                    <option value={incomes.id} key={incomes.id}>{incomes.name}</option>)}
             </select>
             <label>Rodzaj przychodu, np. praca</label>
             <input className="add-member__input" type="text" value={jobName} onChange={e => setJobName(e.target.value)}/>
             <label>Przychód</label>
-            <input className="add-member__input" type="number" value={amount} onChange={e => setAmount(e.target.value)}/>
+            <input className="add-member__input" type="number" value={amount} onChange={e => setAmount(parseFloat(e.target.value))}/>
             <button className="btn add-member__btn" type="submit">Zapisz</button>
         </form>
     )
