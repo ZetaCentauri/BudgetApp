@@ -13,7 +13,7 @@ export function DataProvider({children}) {
   const [year, setYear] = useState();
   const [modalType, setModalType] = useState();
   const [newRequest, setNewRequest] = useState([false]);
-  const [familyMembers, setFamilyMembers] = useState([]);
+  
   
 
 
@@ -28,12 +28,13 @@ export function DataProvider({children}) {
                 setIncomeData(data1);
                 setExpensesData(data2);
                 setOperationsData(data3);
+                setNewRequest(false);
               });       
       }, [month, newRequest]);
 
   useEffect(()=>{
     calculateTotalIncome(incomeData);
-    setFamilyMembers(incomeData.map(member=>member.name));
+  
   },[incomeData]);
 
 

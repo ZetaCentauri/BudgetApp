@@ -1,22 +1,46 @@
 import { useContext, useEffect, useState } from "react";
-import { createMember } from "../API/members";
+import { createMember} from "../API/members";
 import DataContext from "../DataContext/DataContext";
+
+
 
 const AddMemberForm = () => {
 
     const [memberName, setMemberName] = useState(""); 
+    const [memberID, setMemberID] = useState();
+    
     
 
-    const {month, year, setModalType,setNewRequest} = useContext(DataContext);
+    const {month, year, setModalType, setNewRequest, incomeData} = useContext(DataContext);
+
+   
+
+
+   useEffect(()=> {
+    fetch(`http://localhost:3005/membersIncome`)
+     .then(r=>r.json())
+     .then(data => {
+       const idArr = data.map(incomes=>incomes.memberID);
+       const maxID = Math.max(...idArr);
+        setMemberID(maxID + 1);
+     })
+     .catch(error => {
+       console.log(error);
+     })
+    }, [])
+    
 
     const addMember = (e) => {
         e.preventDefault();
 
+    
         const member = {
+            memberID : memberID,
             name: memberName,
             year: year,
             month: month,
-            incomes: []
+            incomes: [],
+            
         }
     
         createMember(member);

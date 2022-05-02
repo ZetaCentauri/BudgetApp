@@ -15,7 +15,7 @@ const Modal = () => {
         case "member":    
             return <AddMemberForm />;
         case "income":
-            return <AddIncomeForm/>;
+            return <AddIncomeForm />;
         case "category":
             return <AddCategoryForm/>;
         case "subcategory":
