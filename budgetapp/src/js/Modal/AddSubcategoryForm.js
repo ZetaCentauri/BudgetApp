@@ -1,12 +1,45 @@
+import { useState, useContext } from "react";
+import { createSubcategory } from "../API/subcategories";
+import DataContext from "../DataContext/DataContext";
+
+
 const AddSubcategoryForm = () => {
         
+    const {expensesData, setModalType, setNewRequest} = useContext(DataContext);
+    const [categoryID, setCategoryID] = useState();
+    const [subcategoryName, setSubcategoryName] = useState("");
+
+
+    const addSubcategory = (e) => {
+        e.preventDefault();
+
+        const previousSubcategories = expensesData.find(category=>(category.id===categoryID)).subcategories;
+        
+
+        const subcategoriesArray = {
+            subcategories : [
+                ...previousSubcategories,
+                {
+                    subcategory : subcategoryName
+                }
+            ]
+        }
+
+    
+        createSubcategory(subcategoriesArray, categoryID);
+        setModalType(null);
+        setNewRequest(true);
+    }
 
     return (
-        <form className="add-member__form">
+        <form className="add-member__form" onSubmit={addSubcategory} >
             <label>Kategoria</label>
-            <input className="add-member__input" type="text"/>
+            <select value={categoryID} onChange={e=>setCategoryID(parseInt(e.target.value))}>
+                {expensesData.map(category=>
+                    <option value={category.id} key={category.id}>{category.category}</option>)}
+            </select>
             <label>Podkategoria</label>
-            <input className="add-member__input" type="text"/>
+            <input className="add-member__input" type="text" value={subcategoryName} onChange={e => setSubcategoryName(e.target.value)}/>
             <button className="btn add-member__btn" type="submit">Zapisz</button>
         </form>
     )
