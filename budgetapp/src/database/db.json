@@ -229,6 +229,11 @@
           "subcategory": "badania"
         }
       ]
+    },
+    {
+      "category": "Samochód",
+      "subcategories": [],
+      "id": 4
     }
   ],
   "subcategories": [

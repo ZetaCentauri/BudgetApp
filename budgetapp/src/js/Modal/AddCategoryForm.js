@@ -1,11 +1,30 @@
-const AddCategoryForm = () => {
+import { useState, useContext } from "react";
+import { createCategory } from "../API/categories";
+import DataContext from "../DataContext/DataContext";
 
-        
+const AddCategoryForm = () => {
+    const [categoryName, setCategoryName] = useState("");
+
+    const { setModalType, setNewRequest } = useContext(DataContext);
+
+    const addCategory = (e) => {
+        e.preventDefault();
+
+    
+        const category = {
+            category : categoryName,
+            subcategories : []
+        }
+    
+        createCategory(category);
+        setModalType(null);
+        setNewRequest(true);
+    }
 
     return (
-        <form className="add-member__form">
+        <form className="add-member__form" onSubmit={addCategory}>
             <label>Kategoria</label>
-            <input className="add-member__input" type="text"/>
+            <input className="add-member__input" type="text" value={categoryName} onChange={e => setCategoryName(e.target.value)}/>
             <button className="btn add-member__btn" type="submit">Zapisz</button>
         </form>
     )
