@@ -28,20 +28,17 @@ const AddIncomeForm = () => {
                 }
             ]
         }
-//MOŻE ODFILTROWAĆ WRZYSTKICH i DORZUCIC TEN OBIEKT ZMIENIONY???
-        // const save = data => {
-        //     setIncomeData(prev => {
-        //         const currentMember = prev.find(member=>member.id===incomesID);
-        //         return {
-        //             ...currentMember,
-        //             data
-        //         }
-        //     });
-        // };
+
+        const save = data => {
+            setIncomeData(prev => {
+                const index = prev.findIndex(monthlyIncome=>monthlyIncome.id===incomesID);
+                return [...prev.slice(0, index), data, ...prev.slice(index + 1)];
+            });
+        };
     
-        createIncome(incomesArray, incomesID);
+        createIncome(incomesArray, incomesID, save);
         setModalType(null);
-        setNewRequest(true);
+       
     }
 
     return (
