@@ -1,3 +1,4 @@
+import { getByPlaceholderText } from "@testing-library/dom";
 import { useState, useContext } from "react";
 import { createSubcategory } from "../API/subcategories";
 import DataContext from "../DataContext/DataContext";
@@ -5,7 +6,7 @@ import DataContext from "../DataContext/DataContext";
 
 const AddSubcategoryForm = () => {
         
-    const {expensesData, setModalType, setNewRequest} = useContext(DataContext);
+    const {expensesData, setModalType, setNewRequest, setExpensesData} = useContext(DataContext);
     const [categoryID, setCategoryID] = useState();
     const [subcategoryName, setSubcategoryName] = useState("");
 
@@ -15,20 +16,34 @@ const AddSubcategoryForm = () => {
 
         const previousSubcategories = expensesData.find(category=>(category.id===categoryID)).subcategories;
         
+        
+        
+            console.log(previousSubcategories);
+            const idArr = previousSubcategories.map(subcategory=>subcategory.id);
+            const maxID = Math.max(...idArr);
+            const subcategoryID = maxID + 1;
+      
 
         const subcategoriesArray = {
             subcategories : [
                 ...previousSubcategories,
                 {
-                    subcategory : subcategoryName
+                    subcategory : subcategoryName,
+                    id : subcategoryID
                 }
             ]
         }
 
+        const save = data => {
+            setExpensesData(prev => {
+                const index = prev.findIndex(category=>category.id===categoryID);
+                return [...prev.slice(0, index), data, ...prev.slice(index + 1)];
+            });
+        };
     
-        createSubcategory(subcategoriesArray, categoryID);
+        createSubcategory(subcategoriesArray, categoryID, save);
         setModalType(null);
-        setNewRequest(true);
+        
     }
 
     return (

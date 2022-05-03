@@ -13,16 +13,9 @@ const AddMemberForm = () => {
     const {month, year, setModalType, setNewRequest, incomeData, setIncomeData} = useContext(DataContext);
 
    useEffect(()=> {
-    fetch(`http://localhost:3005/membersIncome`)
-     .then(r=>r.json())
-     .then(data => {
-       const idArr = data.map(incomes=>incomes.memberID);
+       const idArr = incomeData.map(incomes=>incomes.memberID);
        const maxID = Math.max(...idArr);
-        setMemberID(maxID + 1);
-     })
-     .catch(error => {
-       console.log(error);
-     })
+    setMemberID(maxID + 1);
     }, [])
     
 

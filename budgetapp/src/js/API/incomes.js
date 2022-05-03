@@ -17,16 +17,3 @@ export const createIncome = (incomes, memberID, set) => {
 }
 
 
-
-export const maxMemberID = () => {
-  fetch(`http://localhost:3005/membersIncome:memberID`)
-  .then(r=>r.json())
-  .then(data => {
-    console.log(data);
-    return data.map(member=>member.memberID)
-  })
-  .catch(error => {
-    console.log(error);
-  })
-
-}

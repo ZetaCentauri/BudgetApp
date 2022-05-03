@@ -98,7 +98,8 @@ export function DataProvider({children}) {
   const value = {
       incomeData, 
       expensesData,
-      setIncomeData, 
+      setIncomeData,
+      setExpensesData, 
       operationsData,
       totalExpenses, 
       totalIncome, 

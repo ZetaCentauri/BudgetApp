@@ -219,6 +219,22 @@
       "month": 5,
       "incomes": [],
       "id": 14
+    },
+    {
+      "memberID": 212,
+      "name": "Janek",
+      "year": 2022,
+      "month": 5,
+      "incomes": [],
+      "id": 15
+    },
+    {
+      "memberID": 213,
+      "name": "Ania",
+      "year": 2022,
+      "month": 5,
+      "incomes": [],
+      "id": 16
     }
   ],
   "categories": [
@@ -237,6 +253,14 @@
         {
           "id": 103,
           "subcategory": "na mieście"
+        },
+        {
+          "subcategory": "Hajo",
+          "id": 104
+        },
+        {
+          "subcategory": "Teraz",
+          "id": 105
         }
       ]
     },
@@ -273,16 +297,8 @@
         {
           "id": 303,
           "subcategory": "badania"
-        },
-        {
-          "subcategory": ""
         }
       ]
-    },
-    {
-      "category": "Dzieci",
-      "subcategories": [],
-      "id": 4
     }
   ],
   "subcategories": [
