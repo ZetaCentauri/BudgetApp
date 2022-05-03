@@ -28,7 +28,7 @@ export function DataProvider({children}) {
                 setOperationsData(data3);
                 setNewRequest(false);
               });       
-      }, [month, newRequest]);
+      }, [month]);
 
   useEffect(()=>{
     calculateTotalIncome(incomeData);
