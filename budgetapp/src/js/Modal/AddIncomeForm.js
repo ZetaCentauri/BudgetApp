@@ -8,16 +8,10 @@ const AddIncomeForm = () => {
     const [incomesID, setIncomesID] = useState();
     const [jobName, setJobName] = useState("");
     const [amount, setAmount] = useState(0);
-    
-    
-    
-
 
     const addIncome = (e) => {
         e.preventDefault();
-
         const previousIncomes = incomeData.find(member=>(member.id===incomesID)).incomes;
-        
 
         const incomesArray = {
             incomes : [

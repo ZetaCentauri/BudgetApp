@@ -7,7 +7,7 @@ import AddSubcategoryForm from './AddSubcategoryForm';
 import AddOperationForm from './AddOperationForm';
 
 const Modal = () => {
-    const { modalType: type } = useContext(DataContext);
+    const { modalType: type, setModalType } = useContext(DataContext);
   
    
     const getForm = () => {
@@ -29,6 +29,7 @@ const Modal = () => {
 
 return type ? (
     <div className="modal">
+        <button className="btn" onClick={()=>setModalType(null)}>x</button>
         {getForm()}
     </div>
 ): null;

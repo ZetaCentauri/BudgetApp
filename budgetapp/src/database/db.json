@@ -273,8 +273,16 @@
         {
           "id": 303,
           "subcategory": "badania"
+        },
+        {
+          "subcategory": ""
         }
       ]
+    },
+    {
+      "category": "Dzieci",
+      "subcategories": [],
+      "id": 4
     }
   ],
   "subcategories": [
