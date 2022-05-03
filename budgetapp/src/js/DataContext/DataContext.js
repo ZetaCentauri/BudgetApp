@@ -15,6 +15,7 @@ export function DataProvider({children}) {
   const [newRequest, setNewRequest] = useState([false]);
   
   
+  
 
 
   useEffect(() => {
@@ -93,9 +94,11 @@ export function DataProvider({children}) {
     }
   }
 
+
   const value = {
       incomeData, 
-      expensesData, 
+      expensesData,
+      setIncomeData, 
       operationsData,
       totalExpenses, 
       totalIncome, 

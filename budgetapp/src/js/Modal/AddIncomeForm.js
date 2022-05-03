@@ -4,7 +4,7 @@ import { createIncome } from "../API/incomes";
 
 const AddIncomeForm = () => {
 
-    const {incomeData, setModalType, setNewRequest} = useContext(DataContext);
+    const {incomeData, setModalType, setNewRequest, setIncomeData} = useContext(DataContext);
     const [incomesID, setIncomesID] = useState();
     const [jobName, setJobName] = useState("");
     const [amount, setAmount] = useState(0);
@@ -28,7 +28,16 @@ const AddIncomeForm = () => {
                 }
             ]
         }
-
+//MOŻE ODFILTROWAĆ WRZYSTKICH i DORZUCIC TEN OBIEKT ZMIENIONY???
+        // const save = data => {
+        //     setIncomeData(prev => {
+        //         const currentMember = prev.find(member=>member.id===incomesID);
+        //         return {
+        //             ...currentMember,
+        //             data
+        //         }
+        //     });
+        // };
     
         createIncome(incomesArray, incomesID);
         setModalType(null);

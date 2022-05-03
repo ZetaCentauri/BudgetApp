@@ -1,4 +1,4 @@
-export const createMember = (member) => {
+export const createMember = (member, set) => {
     fetch("http://localhost:3005/membersIncome", {
         headers: {
             "Content-Type": "application/json"
@@ -8,7 +8,7 @@ export const createMember = (member) => {
     })
     .then(r=>r.json())
     .then(data => {
-        console.log(data);
+        set(data)
       })
       .catch(error => {
         console.log(error);

@@ -39,23 +39,10 @@
         {
           "job": "Praca3",
           "amount": 600
-        }
-      ],
-      "subcategories": [
-        {
-          "id": 201,
-          "subcategory": "kino"
         },
         {
-          "id": 202,
-          "subcategory": "ksiąki"
-        },
-        {
-          "id": 203,
-          "subcategory": "teatr"
-        },
-        {
-          "subcategory": "Teatr"
+          "job": "Lolo",
+          "amount": 2000
         }
       ]
     },
@@ -162,6 +149,10 @@
         {
           "job": "Moja",
           "amount": 2000
+        },
+        {
+          "job": "jyg",
+          "amount": 800
         }
       ],
       "id": 11,
@@ -187,12 +178,89 @@
       "month": 5,
       "incomes": [],
       "id": 13
+    },
+    {
+      "memberID": 210,
+      "name": "Ksrol",
+      "year": 2022,
+      "month": 4,
+      "incomes": [],
+      "id": 14
+    },
+    {
+      "memberID": 211,
+      "name": "maka",
+      "year": 2022,
+      "month": 5,
+      "incomes": [
+        {
+          "job": "uyt",
+          "amount": 80
+        }
+      ],
+      "id": 15
+    },
+    {
+      "memberID": 212,
+      "name": "dupa",
+      "year": 2022,
+      "month": 5,
+      "incomes": [
+        {
+          "job": "Praca3",
+          "amount": 2000
+        },
+        {
+          "job": "laks",
+          "amount": 102
+        }
+      ],
+      "id": 16
+    },
+    {
+      "memberID": 213,
+      "name": "pawel",
+      "year": 2022,
+      "month": 5,
+      "incomes": [],
+      "id": 17
+    },
+    {
+      "memberID": 214,
+      "name": "jan",
+      "year": 2022,
+      "month": 5,
+      "incomes": [],
+      "id": 18
+    },
+    {
+      "memberID": 215,
+      "name": "nowy",
+      "year": 2022,
+      "month": 5,
+      "incomes": [],
+      "id": 19
+    },
+    {
+      "memberID": 216,
+      "name": "kowalski",
+      "year": 2022,
+      "month": 5,
+      "incomes": [],
+      "id": 20
+    },
+    {
+      "memberID": 217,
+      "name": "teraz",
+      "year": 2022,
+      "month": 5,
+      "incomes": [],
+      "id": 21
     }
   ],
   "categories": [
     {
       "id": 1,
-      "date": "2022 01",
       "category": "Jedzenie",
       "subcategories": [
         {
@@ -211,7 +279,6 @@
     },
     {
       "id": 2,
-      "date": "2022 01",
       "category": "Rozrywka",
       "subcategories": [
         {
@@ -225,15 +292,11 @@
         {
           "id": 203,
           "subcategory": "teatr"
-        },
-        {
-          "subcategory": "Zoo"
         }
       ]
     },
     {
       "id": 3,
-      "date": "2022 01",
       "category": "Zdrowie",
       "subcategories": [
         {
@@ -249,11 +312,6 @@
           "subcategory": "badania"
         }
       ]
-    },
-    {
-      "category": "Samochód",
-      "subcategories": [],
-      "id": 4
     }
   ],
   "subcategories": [

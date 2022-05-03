@@ -9,12 +9,8 @@ const AddMemberForm = () => {
     const [memberName, setMemberName] = useState(""); 
     const [memberID, setMemberID] = useState();
     
-    
 
-    const {month, year, setModalType, setNewRequest, incomeData} = useContext(DataContext);
-
-   
-
+    const {month, year, setModalType, setNewRequest, incomeData, setIncomeData} = useContext(DataContext);
 
    useEffect(()=> {
     fetch(`http://localhost:3005/membersIncome`)
@@ -42,10 +38,14 @@ const AddMemberForm = () => {
             incomes: [],
             
         }
+
+        const save = data => {
+            setIncomeData(prev => ([...prev, data]))
+        };
     
-        createMember(member);
+        createMember(member, save)
         setModalType(null);
-        setNewRequest(true);
+        // setNewRequest(true);
     }
 
     return (
