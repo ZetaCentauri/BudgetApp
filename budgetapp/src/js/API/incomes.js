@@ -15,5 +15,3 @@ export const createIncome = (incomes, memberID, set) => {
         console.log(error);
       });
 }
-
-

@@ -14,9 +14,6 @@ export function DataProvider({children}) {
   const [modalType, setModalType] = useState();
   const [newRequest, setNewRequest] = useState([false]);
   
-  
-  
-
 
   useEffect(() => {
         Promise.all ([
@@ -101,6 +98,7 @@ export function DataProvider({children}) {
       setIncomeData,
       setExpensesData, 
       operationsData,
+      setOperationsData,
       totalExpenses, 
       totalIncome, 
       modalType,

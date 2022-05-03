@@ -1,5 +1,10 @@
+import { useState, useContext } from "react";
+import DataContext from "../DataContext/DataContext";
+import { createOperation } from "../API/operations";
+
 const AddOperationForm = () => {
         
+    const { operationsData, setOperationsData } = useContext(DataContext);
 
     return (
         <form className="add-member__form">
