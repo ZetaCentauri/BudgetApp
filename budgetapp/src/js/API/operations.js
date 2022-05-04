@@ -1,5 +1,5 @@
 export const createOperation = (operation, set) => {
-    fetch("http://localhost:3005/membersIncome", {
+    fetch("http://localhost:3005/operations", {
         headers: {
             "Content-Type": "application/json"
         },

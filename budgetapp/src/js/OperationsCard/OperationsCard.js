@@ -38,6 +38,8 @@ const OperationsCard = () => {
                         </div>
                         <div className="expenses-list__subcategory--sum"><span>-{amount}</span> zł 
                         </div>
+                        <button className="btn">Edytuj</button>
+                        <button className="btn">Usuń</button>
                     </div>
                     ))
                 }
