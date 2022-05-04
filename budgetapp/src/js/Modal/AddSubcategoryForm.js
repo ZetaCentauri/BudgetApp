@@ -16,8 +16,6 @@ const AddSubcategoryForm = () => {
 
         const previousSubcategories = expensesData.find(category=>(category.id===categoryID)).subcategories;
         
-        
-        
             console.log(previousSubcategories);
             const idArr = previousSubcategories.map(subcategory=>subcategory.id);
             const maxID = Math.max(...idArr);
