@@ -1,4 +1,11 @@
 {
+  "members" : [
+    { 
+      "name" : "Ola",
+      "id" : 1
+    }
+  ],
+
   "membersIncome": [
     {
       "memberID": 1,
