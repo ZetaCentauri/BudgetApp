@@ -5,7 +5,12 @@
       "name": "Ola",
       "year": 2022,
       "month": 5,
-      "incomes": [],
+      "incomes": [
+        {
+          "job": "Biedra",
+          "amount": 2000
+        }
+      ],
       "id": 1
     }
   ],

@@ -4,14 +4,15 @@ import { createIncome } from "../API/incomes";
 
 const AddIncomeForm = () => {
 
-    const {incomeData, setModalType, setNewRequest, setIncomeData} = useContext(DataContext);
-    const [incomesID, setIncomesID] = useState();
+    const {incomeData, setModalType, setIncomeData} = useContext(DataContext);
+    const [incomesID, setIncomesID] = useState(incomeData[0].id);
     const [jobName, setJobName] = useState("");
     const [amount, setAmount] = useState(0);
 
     const addIncome = (e) => {
         e.preventDefault();
         const previousIncomes = incomeData.find(member=>(member.id===incomesID)).incomes;
+        console.log(previousIncomes);
 
         const incomesArray = {
             incomes : [
