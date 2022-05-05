@@ -11,8 +11,8 @@ export function DataProvider({children}) {
   const [totalExpenses, setTotalExpenses] =useState(0);
   const [month, setMonth] = useState();
   const [year, setYear] = useState();
-  const [modalType, setModalType] = useState();
-  const [newRequest, setNewRequest] = useState([false]);
+  const [modalType, setModalType] = useState(null);
+  
   
 
   useEffect(() => {
@@ -26,7 +26,6 @@ export function DataProvider({children}) {
                 setIncomeData(data1);
                 setExpensesData(data2);
                 setOperationsData(data3);
-                setNewRequest(false);
               });       
       }, [month]);
 
@@ -108,9 +107,7 @@ export function DataProvider({children}) {
       year,
       setYear,
       sumUpSubcatExpenses, 
-      calculateTotalIncome,
-      newRequest,
-      setNewRequest
+      calculateTotalIncome
   };
 
 

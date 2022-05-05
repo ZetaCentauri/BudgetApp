@@ -10,12 +10,14 @@ const AddMemberForm = () => {
     const [memberID, setMemberID] = useState();
     
 
-    const {month, year, setModalType, setNewRequest, incomeData, setIncomeData} = useContext(DataContext);
+    const {month, year, setModalType, incomeData, setIncomeData} = useContext(DataContext);
 
    useEffect(()=> {
+       if (incomeData.length > 0) {
        const idArr = incomeData.map(incomes=>incomes.memberID);
        const maxID = Math.max(...idArr);
     setMemberID(maxID + 1);
+       } else {setMemberID(1)}
     }, [])
     
 
