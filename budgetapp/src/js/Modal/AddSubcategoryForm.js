@@ -1,5 +1,5 @@
 import { getByPlaceholderText } from "@testing-library/dom";
-import { useState, useContext } from "react";
+import { useState, useContext} from "react";
 import { createSubcategory } from "../API/subcategories";
 import DataContext from "../DataContext/DataContext";
 
@@ -9,18 +9,18 @@ const AddSubcategoryForm = () => {
     const {expensesData, setModalType, setExpensesData} = useContext(DataContext);
     const [categoryID, setCategoryID] = useState(expensesData[0].id);
     const [subcategoryName, setSubcategoryName] = useState("");
-
+ 
+  
 
     const addSubcategory = (e) => {
         e.preventDefault();
-
-        const previousSubcategories = expensesData.find(category=>(category.id===categoryID)).subcategories;
-        
-            console.log(previousSubcategories);
+        let subcategoryID;
+        const previousSubcategories = expensesData.find(category=>(category.id===categoryID)).subcategories;    
+        if (previousSubcategories.length > 0) {
             const idArr = previousSubcategories.map(subcategory=>subcategory.id);
             const maxID = Math.max(...idArr);
-            const subcategoryID = maxID + 1;
-      
+            subcategoryID = maxID + 1 ;
+        } else { subcategoryID = 1}
 
         const subcategoriesArray = {
             subcategories : [

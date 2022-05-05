@@ -17,12 +17,21 @@
   "categories": [
     {
       "category": "Jedzenie",
-      "subcategories": [],
+      "subcategories": [
+        {
+          "subcategory": "Spoko"
+        }
+      ],
       "id": 1
     },
     {
       "category": "Lekarz",
-      "subcategories": [],
+      "subcategories": [
+        {
+          "subcategory": "OKO",
+          "id": null
+        }
+      ],
       "id": 2
     },
     {
@@ -34,6 +43,20 @@
         }
       ],
       "id": 3
+    },
+    {
+      "category": "okiju",
+      "subcategories": [
+        {
+          "subcategory": "gfdsa",
+          "id": 1
+        },
+        {
+          "subcategory": "jhgfsooo",
+          "id": 2
+        }
+      ],
+      "id": 4
     }
   ],
   "operations": [],
