@@ -14,7 +14,23 @@
       "id": 1
     }
   ],
-  "categories": [],
+  "categories": [
+    {
+      "category": "Jedzenie",
+      "subcategories": [],
+      "id": 1
+    },
+    {
+      "category": "Lekarz",
+      "subcategories": [],
+      "id": 2
+    },
+    {
+      "category": "Rozrywka",
+      "subcategories": [],
+      "id": 3
+    }
+  ],
   "operations": [],
   "users": []
 }

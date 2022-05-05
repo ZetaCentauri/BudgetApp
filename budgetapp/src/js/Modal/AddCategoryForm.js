@@ -5,7 +5,7 @@ import DataContext from "../DataContext/DataContext";
 const AddCategoryForm = () => {
     const [categoryName, setCategoryName] = useState("");
 
-    const { setModalType, setNewRequest } = useContext(DataContext);
+    const { setModalType, setExpensesData } = useContext(DataContext);
 
     const addCategory = (e) => {
         e.preventDefault();
@@ -16,9 +16,13 @@ const AddCategoryForm = () => {
             subcategories : []
         }
     
-        createCategory(category);
+        const save = data => {
+            setExpensesData(prev => ([...prev, data]))
+        };
+
+        createCategory(category, save);
         setModalType(null);
-        setNewRequest(true);
+        
     }
 
     return (

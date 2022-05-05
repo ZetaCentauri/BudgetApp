@@ -1,4 +1,4 @@
-export const createCategory = (category) => {
+export const createCategory = (category, set) => {
     fetch("http://localhost:3005/categories", {
         headers: {
             "Content-Type": "application/json"
@@ -8,7 +8,7 @@ export const createCategory = (category) => {
     })
     .then(r=>r.json())
     .then(data => {
-        console.log(data);
+        set(data);
       })
       .catch(error => {
         console.log(error);
