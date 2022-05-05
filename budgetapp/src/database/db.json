@@ -27,7 +27,12 @@
     },
     {
       "category": "Rozrywka",
-      "subcategories": [],
+      "subcategories": [
+        {
+          "subcategory": "Kino",
+          "id": null
+        }
+      ],
       "id": 3
     }
   ],

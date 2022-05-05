@@ -9,9 +9,6 @@ const ExpensesList = () => {
     const {expensesData, sumUpSubcatExpenses, setModalType} = useContext(DataContext);
     
     
-    // const displayNewCategoryForm = () => {
-        
-    // }
     
 
     return (

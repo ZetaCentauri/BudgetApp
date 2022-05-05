@@ -6,8 +6,8 @@ import DataContext from "../DataContext/DataContext";
 
 const AddSubcategoryForm = () => {
         
-    const {expensesData, setModalType, setNewRequest, setExpensesData} = useContext(DataContext);
-    const [categoryID, setCategoryID] = useState();
+    const {expensesData, setModalType, setExpensesData} = useContext(DataContext);
+    const [categoryID, setCategoryID] = useState(expensesData[0].id);
     const [subcategoryName, setSubcategoryName] = useState("");
 
 
