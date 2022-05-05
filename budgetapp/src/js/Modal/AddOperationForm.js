@@ -5,11 +5,11 @@ import { createOperation } from "../API/operations";
 const AddOperationForm = () => {
         
     const { operationsData, setOperationsData, incomeData, expensesData , setModalType} = useContext(DataContext);
-    const [categoryID, setCategoryID] = useState();
+    const [categoryID, setCategoryID] = useState(expensesData[0].id);
     const [subcategoryID, setSubcategoryID] = useState();
-    const [incomesID, setIncomesID] = useState();
+    // const [incomesID, setIncomesID] = useState();
     const [subcategories, setSubcategories] = useState([]);
-    const [memberID, setMemberID] = useState()
+    const [memberID, setMemberID] = useState(incomeData[0].memberID)
     const [date, setDate] = useState("");
     const [description, setDescription] = useState("");
     const [amount, setAmount] = useState(0);
@@ -20,6 +20,7 @@ const AddOperationForm = () => {
    
     useEffect(()=> {
         setSubcategories(categoryID ? expensesData.find(category=>category.id===categoryID).subcategories : []);
+        setSubcategoryID(categoryID ? expensesData.find(category=>category.id===categoryID).subcategories[0].id : null);
     }, [categoryID]);
     
     const addOperation = (e) => {

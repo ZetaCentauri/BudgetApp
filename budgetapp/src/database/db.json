@@ -16,49 +16,43 @@
   ],
   "categories": [
     {
-      "category": "Jedzenie",
-      "subcategories": [
-        {
-          "subcategory": "Spoko"
-        }
-      ],
-      "id": 1
-    },
-    {
-      "category": "Lekarz",
-      "subcategories": [
-        {
-          "subcategory": "OKO",
-          "id": null
-        }
-      ],
-      "id": 2
-    },
-    {
       "category": "Rozrywka",
       "subcategories": [
         {
           "subcategory": "Kino",
-          "id": null
-        }
-      ],
-      "id": 3
-    },
-    {
-      "category": "okiju",
-      "subcategories": [
-        {
-          "subcategory": "gfdsa",
           "id": 1
         },
         {
-          "subcategory": "jhgfsooo",
+          "subcategory": "Teatr",
           "id": 2
         }
       ],
       "id": 4
     }
   ],
-  "operations": [],
+  "operations": [
+    {
+      "categoryID": 4,
+      "subcategoryID": 1,
+      "payerID": 1,
+      "date": "2022-04-25",
+      "month": 4,
+      "year": 2022,
+      "description": "Fajne",
+      "amount": 3000,
+      "id": 1
+    },
+    {
+      "categoryID": 4,
+      "subcategoryID": 1,
+      "payerID": 1,
+      "date": "2022-05-09",
+      "month": 5,
+      "year": 2022,
+      "description": "jhjgf",
+      "amount": 90,
+      "id": 2
+    }
+  ],
   "users": []
 }
