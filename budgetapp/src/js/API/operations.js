@@ -14,3 +14,15 @@ export const createOperation = (operation, set) => {
         console.log(error);
       });
 }
+
+export const deleteOperation = (id) => {
+  fetch(`http://localhost:3005/operations/${id}`, {
+    method: "DELETE"
+  })
+    .then(response => {
+      console.log(response.ok);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+}

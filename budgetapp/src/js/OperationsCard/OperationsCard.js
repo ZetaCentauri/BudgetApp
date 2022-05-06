@@ -1,10 +1,11 @@
 import  TimePeriod from '../TimePeriod/TimePeriod';
 import DataContext from '../DataContext/DataContext';
 import { useContext } from "react";
+import { deleteOperation } from '../API/operations';
 
 const OperationsCard = () => {
 
-    const {operationsData, expensesData, setModalType} = useContext(DataContext);
+    const {operationsData, expensesData, setModalType, setOperationsData} = useContext(DataContext);
 
 
     const handleCategory = (catID, data) => {
@@ -14,6 +15,14 @@ const OperationsCard = () => {
     const handleSubcategory = (subcatID, catID, data) => {
         const categoryObject = data.find(record=> record.id === catID);
         return categoryObject.subcategories.find(r => r.id === subcatID).subcategory;
+    }
+
+    const handleDelete = (id) => {
+        deleteOperation(id);
+        setOperationsData(prev=>{
+            const index = prev.findIndex(operation=>operation.id===id)
+            return [...prev.slice(0,index), ...prev.slice(index+1)]
+        })
     }
 
    
@@ -132,7 +141,7 @@ const OperationsCard = () => {
                         <div className="operations-list__amount"><span>-{amount}</span> zł 
                         </div>
                         <div>
-                        <button className="btn">Usuń</button>
+                        <button className="btn" onClick={()=>handleDelete(id)}>Usuń</button>
                         </div>
                     </div>
                     ))

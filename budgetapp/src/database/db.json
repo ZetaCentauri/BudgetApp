@@ -72,45 +72,12 @@
       "categoryID": 4,
       "subcategoryID": 1,
       "payerID": 1,
-      "date": "2022-04-25",
-      "month": 4,
-      "year": 2022,
-      "description": "Fajne",
-      "amount": 3000,
-      "id": 1
-    },
-    {
-      "categoryID": 4,
-      "subcategoryID": 1,
-      "payerID": 1,
-      "date": "2022-05-09",
-      "month": 5,
-      "year": 2022,
-      "description": "jhjgf",
-      "amount": 90,
-      "id": 2
-    },
-    {
-      "categoryID": 4,
-      "subcategoryID": 1,
-      "payerID": 1,
       "date": "",
       "month": null,
       "year": null,
       "description": "",
       "amount": 0,
       "id": 3
-    },
-    {
-      "categoryID": 5,
-      "subcategoryID": 1,
-      "payerID": 1,
-      "date": "2022-04-27",
-      "month": 4,
-      "year": 2022,
-      "description": "dfs",
-      "amount": 200,
-      "id": 4
     }
   ],
   "users": []
