@@ -4,7 +4,7 @@ import { createOperation } from "../API/operations";
 
 const AddOperationForm = () => {
         
-    const { operationsData, setOperationsData, incomeData, expensesData , setModalType} = useContext(DataContext);
+    const { operationsData, setOperationsData, incomeData, expensesData , setModalType, month} = useContext(DataContext);
     const [categoryID, setCategoryID] = useState(expensesData[0].id);
     const [subcategoryID, setSubcategoryID] = useState();
     // const [incomesID, setIncomesID] = useState();
@@ -38,10 +38,12 @@ const AddOperationForm = () => {
         }
 
         const save = data => {
+            if (data.month === month) {
             setOperationsData(prev => [
                 ...prev,
                 data
             ]);
+              }
             };
        
     
