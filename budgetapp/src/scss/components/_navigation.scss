@@ -1,10 +1,36 @@
 .nav {
-    display: none;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   background-color: #032038;
+
+   &__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+        }
+
+   &__item {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    text-decoration: none;
+
+
+
+    &:hover {
+      text-decoration: underline;
+     
+    }
+  }
+
   
     @include desktop {
+      
+      position: static;
       height: 100%;
       width: 200px;
-      background-color: #032038;
+      
       border-radius: 20px 0 0  20px;
       display: flex;
       flex-direction: column;
@@ -12,9 +38,8 @@
       padding: 20px;
     
       &__list {
-  width: 100%;
-  
-      }
+        display: block;
+            }
     
       &__item {
         width: 100%;

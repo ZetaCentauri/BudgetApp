@@ -1,4 +1,6 @@
 .main {
+
+  
     @include desktop {
       width: calc(100vw - 100px); 
     }
