@@ -37,17 +37,20 @@ const AddIncomeForm = () => {
     }
 
     return (
-        <form className="add-member__form" onSubmit={addIncome} >
-            <label>Członek rodziny</label>
-            <select value={incomesID} onChange={e=>setIncomesID(parseInt(e.target.value))}>
+        <form className="modal__form" onSubmit={addIncome} >
+            <label>Członek rodziny:
+            <select className="modal__select" value={incomesID} onChange={e=>setIncomesID(parseInt(e.target.value))}>
                 {incomeData.map(incomes=>
                     <option value={incomes.id} key={incomes.id}>{incomes.name}</option>)}
             </select>
-            <label>Rodzaj przychodu, np. praca</label>
-            <input className="add-member__input" type="text" value={jobName} onChange={e => setJobName(e.target.value)}/>
-            <label>Przychód</label>
-            <input className="add-member__input" type="number" value={amount} onChange={e => setAmount(parseFloat(e.target.value))}/>
-            <button className="btn add-member__btn" type="submit">Zapisz</button>
+            </label>
+            <label>Rodzaj przychodu:
+            <input className="modal__input" type="text" value={jobName} onChange={e => setJobName(e.target.value)}/>
+            </label>
+            <label>Wysokość przychodu:
+            <input className="modal__input" type="number" value={amount} onChange={e => setAmount(parseFloat(e.target.value))}/>
+            </label>
+            <button className="btn modal__btn" type="submit">Zapisz</button>
         </form>
     )
 }

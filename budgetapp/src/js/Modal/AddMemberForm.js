@@ -44,10 +44,11 @@ const AddMemberForm = () => {
     }
 
     return (
-        <form className="add-member__form" onSubmit={addMember} >
-            <label>Członek rodziny</label>
-            <input className="add-member__input" type="text" value={memberName} onChange={e => setMemberName(e.target.value)}/>
-            <button className="btn add-member__btn" type="submit">Zapisz</button>
+        <form className="modal__form" onSubmit={addMember} >
+            <label>Członek rodziny:
+            <input className="modal__input" type="text" value={memberName} onChange={e => setMemberName(e.target.value)}/>
+            </label>
+            <button className="btn modal__btn" type="submit">Zapisz</button>
         </form>
     )
 }

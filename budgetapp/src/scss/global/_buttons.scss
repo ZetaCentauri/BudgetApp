@@ -32,3 +32,25 @@
     margin: 5px;
     width: 25px;
 }
+
+.add_operation__btn {
+    margin: 5px;
+    width: 25px;
+    position: relative;
+    display: inline;
+
+    &:hover {
+        &::after {
+            content: 'Dodaj operację';
+            position: absolute;
+            top: -1.5rem;
+            left: -5rem;
+            padding: 0.2rem;
+            width: auto;
+            height: auto;
+            z-index: 1000;
+            background-color: $color-theme;
+            border-radius: 5px;
+        }
+    }
+}

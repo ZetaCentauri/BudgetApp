@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 const SubCategory = ({subTitle, subcatID, catID}) => {
 
     const [amount, setAmount] = useState(0);
-    const {sumUpSubcatExpenses, month, operationsData} = useContext(DataContext);
+    const {sumUpSubcatExpenses, month, operationsData, setModalType} = useContext(DataContext);
    
    
     useEffect(()=>{
@@ -17,7 +17,7 @@ return (
     <div className="expenses-list__subcategory">
         <div className="expenses-list__subcategory--name">{subTitle}</div>
         <div className="expenses-list__subcategory--sum"><span>{amount}</span> zł
-        <button className="btn category_btn" style={{display: "inline"}}>+</button></div>
+        <button className="btn add_operation__btn" onClick={()=>setModalType("operation")}>+</button></div>
     </div>
     </>
 )

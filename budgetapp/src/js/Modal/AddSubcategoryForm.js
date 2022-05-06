@@ -45,15 +45,17 @@ const AddSubcategoryForm = () => {
     }
 
     return (
-        <form className="add-member__form" onSubmit={addSubcategory} >
-            <label>Kategoria</label>
-            <select value={categoryID} onChange={e=>setCategoryID(parseInt(e.target.value))}>
+        <form className="modal__form" onSubmit={addSubcategory} >
+            <label>Kategoria:
+            <select className="modal__select" value={categoryID} onChange={e=>setCategoryID(parseInt(e.target.value))}>
                 {expensesData.map(category=>
                     <option value={category.id} key={category.id}>{category.category}</option>)}
             </select>
-            <label>Podkategoria</label>
-            <input className="add-member__input" type="text" value={subcategoryName} onChange={e => setSubcategoryName(e.target.value)}/>
-            <button className="btn add-member__btn" type="submit">Zapisz</button>
+            </label>
+            <label>Podkategoria:
+            <input className="modal__input" type="text" value={subcategoryName} onChange={e => setSubcategoryName(e.target.value)}/>
+            </label>
+            <button className="btn modal__btn" type="submit">Zapisz</button>
         </form>
     )
 }

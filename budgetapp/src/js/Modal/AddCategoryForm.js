@@ -26,10 +26,11 @@ const AddCategoryForm = () => {
     }
 
     return (
-        <form className="add-member__form" onSubmit={addCategory}>
-            <label>Kategoria</label>
-            <input className="add-member__input" type="text" value={categoryName} onChange={e => setCategoryName(e.target.value)}/>
-            <button className="btn add-member__btn" type="submit">Zapisz</button>
+        <form className="modal__form" onSubmit={addCategory}>
+            <label>Kategoria
+            <input className="modal__input" type="text" value={categoryName} onChange={e => setCategoryName(e.target.value)}/>
+            </label>
+            <button className="btn modal__btn" type="submit">Zapisz</button>
         </form>
     )
 }

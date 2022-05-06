@@ -1,11 +1,10 @@
 {
-  "members" : [
-    { 
-      "name" : "Ola",
-      "id" : 1
+  "members": [
+    {
+      "name": "Ola",
+      "id": 1
     }
   ],
-
   "membersIncome": [
     {
       "memberID": 1,
@@ -19,6 +18,23 @@
         }
       ],
       "id": 1
+    },
+    {
+      "memberID": 2,
+      "name": "Marta",
+      "year": 2022,
+      "month": 5,
+      "incomes": [
+        {
+          "job": "Koncert",
+          "amount": 2000
+        },
+        {
+          "job": "Opera",
+          "amount": 2700
+        }
+      ],
+      "id": 2
     }
   ],
   "categories": [
@@ -32,9 +48,23 @@
         {
           "subcategory": "Teatr",
           "id": 2
+        },
+        {
+          "subcategory": "Rolki",
+          "id": 3
         }
       ],
       "id": 4
+    },
+    {
+      "category": "Jedzenie",
+      "subcategories": [
+        {
+          "subcategory": "W domu",
+          "id": 1
+        }
+      ],
+      "id": 5
     }
   ],
   "operations": [
@@ -59,6 +89,17 @@
       "description": "jhjgf",
       "amount": 90,
       "id": 2
+    },
+    {
+      "categoryID": 4,
+      "subcategoryID": 1,
+      "payerID": 1,
+      "date": "",
+      "month": null,
+      "year": null,
+      "description": "",
+      "amount": 0,
+      "id": 3
     }
   ],
   "users": []
