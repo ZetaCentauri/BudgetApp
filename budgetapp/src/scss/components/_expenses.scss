@@ -1,4 +1,4 @@
-.expenses-list__card, .income-list__card {
+.expenses-list__card, .income-list__card , .operations-list__card{
     width: 100%;
     background-color: #ffffff;
     margin-top: 20px;
@@ -6,7 +6,7 @@
     box-shadow: 2px 2px 5px $color-theme;
 }
 
-.expenses-list__header, .income-list__header{
+.expenses-list__header, .income-list__header, .operations-list__header {
     display: flex;
     justify-content: space-between;
     background-color: $color-theme;
@@ -19,7 +19,8 @@
 }
 
 .expenses-list__category, .expenses-list__subcategory, 
-.income-list__category, .income-list__subcategory {
+.income-list__category, .income-list__subcategory, 
+.operations-list__category, .operations-list__subcategory {
     width: 100%;
 
     display: flex;
@@ -30,18 +31,18 @@
     font-weight: bold;
 }
 
-.expenses-list__category, .income-list__category {
+.expenses-list__category, .income-list__category, .operations-list__category {
     border-top: 4px solid $color-theme;
 }
 
-.expenses-list__subcategory, .income-list__subcategory {
+.expenses-list__subcategory, .income-list__subcategory, .operations-list__subcategory {
    padding-left: 30px;
     font-weight: 400;
     padding-right: 0;
 
 }
 
-.expenses-list__list, .income-list__list {
+.expenses-list__list, .income-list__list, .operations-list__list {
     max-height: 55vh;
     overflow-y: scroll ;
     

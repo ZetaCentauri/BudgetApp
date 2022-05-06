@@ -100,6 +100,17 @@
       "description": "",
       "amount": 0,
       "id": 3
+    },
+    {
+      "categoryID": 5,
+      "subcategoryID": 1,
+      "payerID": 1,
+      "date": "2022-04-27",
+      "month": 4,
+      "year": 2022,
+      "description": "dfs",
+      "amount": 200,
+      "id": 4
     }
   ],
   "users": []
