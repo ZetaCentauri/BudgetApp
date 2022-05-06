@@ -1,70 +1,13 @@
 {
   "members": [],
   "membersIncome": [
-    {
-      "memberID": 1,
-      "name": "Kasia",
-      "year": 2022,
-      "month": 5,
-      "incomes": [
-        {
-          "job": "Biedra",
-          "amount": 2700
-        }
-      ],
-      "id": 1
-    }
+   
   ],
   "categories": [
-    {
-      "category": "Moje",
-      "subcategories": [
-        {
-          "subcategory": "Najlepsze",
-          "id": 1
-        },
-        {
-          "subcategory": "Oko",
-          "id": 2
-        }
-      ],
-      "id": 1
-    }
+    
   ],
   "operations": [
-    {
-      "categoryID": 1,
-      "subcategoryID": 1,
-      "payerID": 1,
-      "date": "2022-05-06",
-      "month": 5,
-      "year": 2022,
-      "description": "Koko",
-      "amount": 200,
-      "id": 1
-    },
-    {
-      "categoryID": 1,
-      "subcategoryID": 1,
-      "payerID": 1,
-      "date": "2022-04-27",
-      "month": 4,
-      "year": 2022,
-      "description": "jiji",
-      "amount": 10,
-      "id": 2
-    },
-    {
-      "categoryID": 1,
-      "subcategoryID": 1,
-      "payerID": 1,
-      "date": "2022-04-28",
-      "month": 4,
-      "year": 2022,
-      "description": "jj",
-      "amount": 80,
-      "id": 3
-    }
+   
   ],
   "users": []
 }
