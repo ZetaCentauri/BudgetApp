@@ -4,7 +4,11 @@ export const DataContext = createContext();
 
 export function DataProvider({children}) {
 
-  const [incomeData, setIncomeData] = useState([])
+  const [incomeData, setIncomeData] = useState([]);
+
+  const [membersData, setMembersData] = useState([]);
+  const [incomesData, setIncomesData] = useState([]);
+
   const [expensesData, setExpensesData] = useState([]);
   const [operationsData, setOperationsData] = useState([]);
   const [totalIncome, setTotalIncome] = useState(0);
@@ -16,24 +20,43 @@ export function DataProvider({children}) {
   
 
   useEffect(() => {
-        Promise.all ([
+  
+    Promise.all ([
           fetch(`http://localhost:3005/membersIncome?month=${month}&&year=${year}`), 
           fetch("http://localhost:3005/categories"),
-          fetch(`http://localhost:3005/operations?month=${month}&&year=${year}`)
+          fetch(`http://localhost:3005/operations?month=${month}&&year=${year}`),
+          fetch("http://localhost:3005/members"),
+          fetch(`http://localhost:3005/incomes?month=${month}&&year=${year}`),
           ]).then((result) => {
             return Promise.all(result.map(r=>r.json()))
-            }).then(([data1, data2, data3]) => {
+            }).then(([data1, cat, oper, memb, inc]) => {
                 setIncomeData(data1);
-                setExpensesData(data2);
-                setOperationsData(data3);
+
+                setExpensesData(cat);
+                setOperationsData(oper);
+                setMembersData(memb);
+                setIncomesData(inc);
+                console.log(inc);
+
               });       
       }, [month]);
 
   useEffect(()=>{
-    calculateTotalIncome(incomeData);
-  
-  },[incomeData]);
+    // calculateTotalIncome(incomeData);
+    calcTotalIncome(incomesData);
+  },[incomesData]);
 
+   const calcTotalIncome = (data) => {
+    const incomesAmountArray = data.map(income => income.amount);
+    if (incomesAmountArray.length > 0) {
+      const total = incomesAmountArray.reduce((total, amount)=> total+amount);
+      setTotalIncome(total);
+      return total;
+    } else {
+      setTotalIncome(0);
+      return 0;
+    }
+   }
 
 
   const calculateTotalIncome = (data) => {
@@ -57,7 +80,7 @@ export function DataProvider({children}) {
 
   useEffect(()=>{
     calculateTotalExpenses(operationsData);
-  },[operationsData, month]);
+  },[operationsData]);
 
   const calculateTotalExpenses = (data) => {
     const operationsAmountArray = data.map(operation => operation.amount);
@@ -71,6 +94,17 @@ export function DataProvider({children}) {
     }
   }
 
+  const sumUpMemberIncomes = (memberID) => {
+    if (incomesData.length > 0) {
+    const filtered = incomesData.filter(income => income.memberID === memberID);
+    const memberIncomesArray = filtered.map(el => el.amount);
+    
+    return (memberIncomesArray.length > 0) ? 
+      (memberIncomesArray.reduce((sum, income) => sum + income)) :  0; 
+    } else {
+      return 0;
+    }
+  }
 
   // function sumUpSubcategoryExpenses sums us all operations in the corresponding Category or Subcategory
   const sumUpSubcatExpenses = (catID, subCatID, data) => {
@@ -81,7 +115,6 @@ export function DataProvider({children}) {
 
       const exspensesArray = filtered.map(el => el.amount);
       
-
       return (exspensesArray.length > 0) ? 
       (exspensesArray.reduce((sum, expense) => sum + expense)) :  0; 
 
@@ -107,7 +140,14 @@ export function DataProvider({children}) {
       year,
       setYear,
       sumUpSubcatExpenses, 
-      calculateTotalIncome
+      calculateTotalIncome,
+
+      incomesData,
+      setIncomesData,
+      membersData,
+      setMembersData,
+
+    sumUpMemberIncomes
   };
 
 

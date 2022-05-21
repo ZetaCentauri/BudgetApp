@@ -4,7 +4,7 @@ import FamilyMember from "./FamilyMember";
 
 const IncomeList = () => {
     // const [data, setData] = useState([])
-    const {incomeData, setModalType} = useContext(DataContext);
+    const {incomeData, setModalType, membersData} = useContext(DataContext);
 
 
     return (
@@ -16,9 +16,13 @@ const IncomeList = () => {
              </div>
              
              <div className="income-list__list">
-             {incomeData?.map(({ id, name, incomes }) => (
+             {/* {incomeData?.map(({ id, name, incomes }) => (
                  <FamilyMember key={id} title={name} incomes={incomes}/>
-                ))}
+                ))} */}
+
+            {membersData?.map(({ id, memberName, jobs }) => (
+                 <FamilyMember key={id} memberID={id} title={memberName} jobs={jobs}/>
+                ))} 
             </div>
             
         </div>

@@ -2,8 +2,14 @@ import { faBorderNone } from "@fortawesome/free-solid-svg-icons";
 import DataContext from "../DataContext/DataContext";
 import { useContext, useEffect, useState } from "react";
 
-const Job = ({job, amount}) => {
-   
+const Job = ({job, jobID : id}) => {
+
+
+const {incomesData} = useContext(DataContext);
+
+const amount = incomesData.length > 0 ? incomesData.find(income => income.jobID === id).amount : 0;
+
+
 return (
     <>
     <div className="income-list__subcategory">

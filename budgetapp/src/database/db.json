@@ -1,13 +1,117 @@
 {
-  "members": [],
-  "membersIncome": [
+  "members": [
+    {
+      "id" : 1,
+      "memberName" : "Paweł",
+      "jobs" : [
+        {
+          "job" : "Synerise",
+          "id" : 1
+        },
+        {
+          "job" : "Filharmonia",
+          "id" : 2
+        }
+      ]
+    }
    
   ],
-  "categories": [
+
+  "incomes" : [
+    {
+      "memberID": 1,
+      "jobID": 1,
+      "month": 5,
+      "year": 2022,
+      "amount": 5000,
+      "id": 1
+    },
+    {
+      "memberID": 1,
+      "jobID": 2,
+      "month": 5,
+      "year": 2022,
+      "amount": 3200,
+      "id": 2
+    },
+    {
+      "memberID": 1,
+      "jobID": 2,
+      "month": 6,
+      "year": 2022,
+      "amount": 3000,
+      "id": 3
+    },
+    {
+      "memberID": 1,
+      "jobID": 1,
+      "month": 6,
+      "year": 2022,
+      "amount": 3000,
+      "id": 4
+    }
     
   ],
+
+
+  "membersIncome": [
+    {
+      "memberID": 1,
+      "name": "Paweł",
+      "year": 2022,
+      "month": 5,
+      "incomes": [
+        {
+          "job": "Synerise",
+          "amount": 89000
+        },
+        {
+          "job": "Filharmonia",
+          "amount": 3000
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "category": "Jedzenie",
+      "subcategories": [
+        {
+          "subcategory": "W domu",
+          "id": 1
+        },
+        {
+          "subcategory": "Na mieście",
+          "id": 2
+        }
+      ],
+      "id": 1
+    }
+  ],
   "operations": [
-   
+    {
+      "categoryID": 1,
+      "subcategoryID": 1,
+      "payerID": 1,
+      "date": "2022-05-20",
+      "month": 5,
+      "year": 2022,
+      "description": "Zakupy",
+      "amount": 255,
+      "id": 1
+    },
+    {
+      "categoryID": 1,
+      "subcategoryID": 2,
+      "payerID": 1,
+      "date": "2022-05-20",
+      "month": 5,
+      "year": 2022,
+      "description": "Pizza",
+      "amount": 80,
+      "id": 2
+    }
   ],
   "users": []
 }
