@@ -1,23 +1,26 @@
 {
   "members": [
     {
-      "id" : 1,
-      "memberName" : "Paweł",
-      "jobs" : [
+      "id": 1,
+      "memberName": "Paweł",
+      "jobs": [
         {
-          "job" : "Synerise",
-          "id" : 1
+          "job": "Synerise",
+          "id": 1
         },
         {
-          "job" : "Filharmonia",
-          "id" : 2
+          "job": "Filharmonia",
+          "id": 2
         }
       ]
+    },
+    {
+      "id": 2,
+      "memberName": "Joasia",
+      "jobs": []
     }
-   
   ],
-
-  "incomes" : [
+  "incomes": [
     {
       "memberID": 1,
       "jobID": 1,
@@ -50,10 +53,7 @@
       "amount": 3000,
       "id": 4
     }
-    
   ],
-
-
   "membersIncome": [
     {
       "memberID": 1,

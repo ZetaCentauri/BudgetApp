@@ -1,5 +1,5 @@
 export const createMember = (member, set) => {
-    fetch("http://localhost:3005/membersIncome", {
+    fetch("http://localhost:3005/members", {
         headers: {
             "Content-Type": "application/json"
         },

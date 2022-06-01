@@ -10,11 +10,11 @@ const AddMemberForm = () => {
     const [memberID, setMemberID] = useState();
     
 
-    const {month, year, setModalType, incomeData, setIncomeData} = useContext(DataContext);
+    const {setModalType, membersData, setMembersData} = useContext(DataContext);
 
    useEffect(()=> {
-       if (incomeData.length > 0) {
-       const idArr = incomeData.map(incomes=>incomes.memberID);
+       if (membersData.length > 0) {
+       const idArr = membersData.map(member=>member.id);
        const maxID = Math.max(...idArr);
     setMemberID(maxID + 1);
        } else {setMemberID(1)}
@@ -26,21 +26,17 @@ const AddMemberForm = () => {
 
     
         const member = {
-            memberID : memberID,
-            name: memberName,
-            year: year,
-            month: month,
-            incomes: [],
-            
+            id : memberID,
+            memberName,
+            jobs : []
         }
 
         const save = data => {
-            setIncomeData(prev => ([...prev, data]))
+            setMembersData(prev => ([...prev, data]))
         };
     
         createMember(member, save)
         setModalType(null);
-        // setNewRequest(true);
     }
 
     return (
