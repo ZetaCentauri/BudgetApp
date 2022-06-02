@@ -5,6 +5,7 @@ import AddIncomeForm from './AddIncomeForm';
 import AddCategoryForm from './AddCategoryForm';
 import AddSubcategoryForm from './AddSubcategoryForm';
 import AddOperationForm from './AddOperationForm';
+import AddJobForm from './AddJobForm';
 
 const Modal = () => {
     const { modalType: type, setModalType } = useContext(DataContext);
@@ -13,7 +14,9 @@ const Modal = () => {
     const getForm = () => {
     switch (type) {
         case "member":    
-            return <AddMemberForm />;
+            return <AddMemberForm/>;
+        case "job":
+            return <AddJobForm/>;
         case "income":
             return <AddIncomeForm />;
         case "category":

@@ -3,13 +3,11 @@ import { createMember} from "../API/members";
 import DataContext from "../DataContext/DataContext";
 
 
-
 const AddMemberForm = () => {
 
     const [memberName, setMemberName] = useState(""); 
     const [memberID, setMemberID] = useState();
     
-
     const {setModalType, membersData, setMembersData} = useContext(DataContext);
 
    useEffect(()=> {

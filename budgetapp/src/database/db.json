@@ -11,13 +11,26 @@
         {
           "job": "Filharmonia",
           "id": 2
+        },
+        {
+          "job": "Radio",
+          "id": 3
         }
       ]
     },
     {
       "id": 2,
       "memberName": "Joasia",
-      "jobs": []
+      "jobs": [
+        {
+          "job": "Szkoła",
+          "id": 1
+        },
+        {
+          "job": "Korki",
+          "id": 2
+        }
+      ]
     }
   ],
   "incomes": [

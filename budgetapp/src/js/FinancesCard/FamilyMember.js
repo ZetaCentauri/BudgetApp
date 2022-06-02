@@ -37,7 +37,7 @@ const FamilyMember = ({title, jobs, memberID}) => {
                 )
             })
         } */}
-        <button className="btn" onClick={()=>setModalType("income")}>Dodaj przychód</button>
+        <button className="btn" onClick={()=>setModalType("job")}>Dodaj nazwę pracy lub przychodu</button>
         </>
     )
 }
