@@ -36,7 +36,7 @@ export function DataProvider({children}) {
                 setOperationsData(oper);
                 setMembersData(memb);
                 setIncomesData(inc);
-                console.log(inc);
+                
 
               });       
       }, [month]);
@@ -94,13 +94,15 @@ export function DataProvider({children}) {
     }
   }
 
-  const sumUpMemberIncomes = (memberID) => {
+  const sumUpMemberIncomes = (memberID, jobID) => {
     if (incomesData.length > 0) {
-    const filtered = incomesData.filter(income => income.memberID === memberID);
-    const memberIncomesArray = filtered.map(el => el.amount);
-    
-    return (memberIncomesArray.length > 0) ? 
-      (memberIncomesArray.reduce((sum, income) => sum + income)) :  0; 
+      const filtered = jobID ? 
+        incomesData.filter(income => income.memberID === memberID && income.jobID === jobID)
+        : incomesData.filter(income => income.memberID === memberID);
+      const memberIncomesArray = filtered.map(el => el.amount);
+      
+      return (memberIncomesArray.length > 0) ? 
+        (memberIncomesArray.reduce((sum, income) => sum + income)) :  0; 
     } else {
       return 0;
     }

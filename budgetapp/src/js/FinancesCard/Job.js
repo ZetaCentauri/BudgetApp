@@ -2,12 +2,20 @@ import { faBorderNone } from "@fortawesome/free-solid-svg-icons";
 import DataContext from "../DataContext/DataContext";
 import { useContext, useEffect, useState } from "react";
 
-const Job = ({job, jobID : id}) => {
+const Job = ({job, jobID, memberID}) => {
 
 
-const {incomesData} = useContext(DataContext);
+const {incomesData, sumUpMemberIncomes} = useContext(DataContext);
+const [amount, setAmount] = useState(0);
 
-const amount = incomesData.length > 0 ? incomesData.find(income => income.jobID === id).amount : 0;
+
+
+
+useEffect(()=>{
+    setAmount(sumUpMemberIncomes(memberID, jobID));
+   }, [incomesData]);
+
+
 
 
 return (

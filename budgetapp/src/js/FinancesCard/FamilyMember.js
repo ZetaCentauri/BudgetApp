@@ -26,7 +26,7 @@ const FamilyMember = ({title, jobs, memberID}) => {
         {
             jobs?.map(({job, id})=>{
                 return (
-                <Job key={id} job={job} jobID = {id} />
+                <Job key={id} job={job} jobID = {id} memberID={memberID} />
                 )
             })
         }
